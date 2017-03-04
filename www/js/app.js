@@ -70,142 +70,142 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
 /***** recipes stuff *****/
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.weeklymenu', {
+      url: '/weeklymenu',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/weeklymenu.html',
           controller: 'weeklyMenuCtrl'
         }
       }
     })
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.recipe1', {
+      url: '/recipe1',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/recipe1.html',
           controller: 'singleRecipeCtrl'
         }
       }
     })
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.login1', {
+      url: '/login1',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/login1.html',
           controller: 'loginCtrl'
         }
       }
     })
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.signup', {
+      url: '/signup',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/signup.html',
           controller: 'signupCtrl'
         }
       }
     })
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.freerecipes', {
+      url: '/freerecipes',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/freerecipes.html',
           controller: 'freeRecipesCtrl'
         }
       }
     })
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.recipe2', {
+      url: '/recipe2',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/recipe2.html',
           controller: 'styledSingleRecipeCtrl'
         }
       }
     })
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.ingredients', {
+      url: '/ingredients',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/ingredients.html',
           controller: 'ingredientsCtrl'
         }
       }
     })
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.recipe3', {
+      url: '/recipe3',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/recipe3.html',
           controller: 'uXSingleRecipeCtrl'
         }
       }
     })
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.recipe4', {
+      url: '/recipe4',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/recipe4.html',
           controller: 'uXSingleRecipe2Ctrl'
         }
       }
     })
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.directions', {
+      url: '/directions',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/directions.html',
           controller: 'directionsCtrl'
         }
       }
     })
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.glsettings', {
+      url: '/glsettings',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/glsettings.html',
           controller: 'groceryListSettingsCtrl'
         }
       }
     })
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.gl', {
+      url: '/gl',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/gl.html',
           controller: 'groceryListCtrl'
         }
       }
     })
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.calendar', {
+      url: '/calendar',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/calendar.html',
           controller: 'recipesCalendarCtrl'
         }
       }
     })
 
 
-.state('app.playlists', {
-      url: '/playlists',
+.state('app.drygoods', {
+      url: '/drygoods',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'templates/drygoods.html',
           controller: 'dRYGOODSCtrl'
         }
       }

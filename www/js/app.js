@@ -80,35 +80,35 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
-// .state('app.recipe1', {
-//       url: '/recipe1',
-//       views: {
-//         'menuContent': {
-//           templateUrl: 'templates/recipe1.html',
-//           controller: 'singleRecipeCtrl'
-//         }
-//       }
-//     })
+.state('app.recipe1', {
+      url: '/recipe1',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/recipe1.html',
+          controller: 'singleRecipeCtrl'
+        }
+      }
+    })
 
-// .state('app.login1', {
-//       url: '/login1',
-//       views: {
-//         'menuContent': {
-//           templateUrl: 'templates/login1.html',
-//           controller: 'loginCtrl'
-//         }
-//       }
-//     })
+.state('app.login1', {
+      url: '/login1',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/login1.html',
+          controller: 'loginCtrl'
+        }
+      }
+    })
 
-// .state('app.signup', {
-//       url: '/signup',
-//       views: {
-//         'menuContent': {
-//           templateUrl: 'templates/signup.html',
-//           controller: 'signupCtrl'
-//         }
-//       }
-//     })
+.state('app.signup', {
+      url: '/signup',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/signup.html',
+          controller: 'signupCtrl'
+        }
+      }
+    })
 
 // .state('app.freerecipes', {
 //       url: '/freerecipes',

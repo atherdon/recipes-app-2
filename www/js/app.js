@@ -25,7 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
@@ -70,6 +70,147 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
 /***** recipes stuff *****/
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'weeklyMenuCtrl'
+        }
+      }
+    })
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'singleRecipeCtrl'
+        }
+      }
+    })
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'loginCtrl'
+        }
+      }
+    })
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'signupCtrl'
+        }
+      }
+    })
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'freeRecipesCtrl'
+        }
+      }
+    })
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'styledSingleRecipeCtrl'
+        }
+      }
+    })
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'ingredientsCtrl'
+        }
+      }
+    })
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'uXSingleRecipeCtrl'
+        }
+      }
+    })
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'uXSingleRecipe2Ctrl'
+        }
+      }
+    })
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'directionsCtrl'
+        }
+      }
+    })
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'groceryListSettingsCtrl'
+        }
+      }
+    })
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'groceryListCtrl'
+        }
+      }
+    })
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'recipesCalendarCtrl'
+        }
+      }
+    })
+
+
+.state('app.playlists', {
+      url: '/playlists',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/playlists.html',
+          controller: 'dRYGOODSCtrl'
+        }
+      }
+    })
+
 
 
 

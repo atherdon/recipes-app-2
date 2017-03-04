@@ -69,18 +69,6 @@ angular.module('starter.controllers', ['app.services'])
 })
 
 
-/* Populate weekly menu page list with recipes data from json */
-// .controller('weeklyMenuList', ['$scope', '$stateParams', 'weeklyMenuAlterFactory', 
-
-// function ($scope, $stateParams, weeklyMenuAlterFactory ) {
-
-//   console.log('123');
-//   // weeklyMenuAlterFactory.get().then(function(response){
-//   //     $scope.data = response.data;
-//   // })
-        
-
-// }])
 
 .controller('singleRecipeCtrl', function($scope, $stateParams) {
 })
@@ -112,7 +100,19 @@ angular.module('starter.controllers', ['app.services'])
 .controller('groceryListSettingsCtrl', function($scope, $stateParams) {
 })
 
-.controller('groceryListCtrl', function($scope, $stateParams) {
+.controller('groceryListCtrl', function($scope, $stateParams, groceryCategory) {
+
+//@TODO remove getting info and move it to services.
+//Looks awful right now. Also remove not necessary variables from constructor and method
+    
+    groceryCategory.getCategories( function(data){
+
+      console.log(data);
+
+      $scope.categories = data;
+
+    });
+
 })
 
 .controller('recipesCalendarCtrl', function($scope, $stateParams) {

@@ -1,14 +1,27 @@
-<ion-view title="Grocery List" id="page14">
-  <ion-content padding="true" class="has-header">
-    <ion-list id="groceryList-list12">
-      <ion-item class="item-icon-left assertive" id="groceryList-list-item54" ui-sref="tabsController.recipesCalendar">
-        <i class="icon ion-ios-calendar-outline"></i>Recipes Calendar</ion-item>
-      <ion-item class="item-icon-left" id="groceryList-list-item65" ui-sref="tabsController.dRYGOODS">
-        <i class="icon ion-ios-arrow-down"></i>Beverages</ion-item>
-      <ion-item class="item-icon-left" id="groceryList-list-item66" ui-sref="tabsController.dRYGOODS">
-        <i class="icon ion-ios-arrow-down"></i>Diary</ion-item>
-      <ion-item class="item-icon-left" id="groceryList-list-item67">
-        <i class="icon ion-ios-arrow-down"></i>DRY GOODS</ion-item>
-    </ion-list>
-  </ion-content>
+<ion-view view-title="Grocery List" id="page14">
+    <ion-content padding="true" class="has-header">
+        
+        
+        
+        <ion-list id="groceryList-list12" >
+
+            <ion-item class="item-icon-left assertive" 
+                      id="groceryList-list-item54" 
+                      href="#/app/calendar"
+                      ui-sref="tabsController.recipesCalendar">
+                <i class="icon ion-ios-calendar-outline"></i>
+                Recipes Calendar
+            </ion-item>
+            
+            <ion-item ng-repeat="category in categories"
+                      class="item-icon-left" 
+                      id="groceryList-list-item{{ category.category_id }}"
+                      href="#/app/grocerylistitem/{{category.id}}" >
+                <!--<i class="icon ion-ios-arrow-down"></i>-->
+                <i class="icon ion-ios-arrow-right"></i>
+                {{ category.name }}
+            </ion-item>
+                       
+        </ion-list>
+    </ion-content>
 </ion-view>

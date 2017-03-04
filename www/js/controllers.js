@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['app.services'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -58,8 +58,29 @@ angular.module('starter.controllers', [])
 
 
 /* recipes stuff */
-.controller('weeklyMenuCtrl', function($scope, $stateParams) {
+.controller('weeklyMenuCtrl', function($scope, $stateParams, weeklyMenuAlterFactory) {
+
+  // console.log('123');
+  weeklyMenuAlterFactory.get().then(function(response){
+
+      $scope.data = response.data;
+  })
+
 })
+
+
+/* Populate weekly menu page list with recipes data from json */
+// .controller('weeklyMenuList', ['$scope', '$stateParams', 'weeklyMenuAlterFactory', 
+
+// function ($scope, $stateParams, weeklyMenuAlterFactory ) {
+
+//   console.log('123');
+//   // weeklyMenuAlterFactory.get().then(function(response){
+//   //     $scope.data = response.data;
+//   // })
+        
+
+// }])
 
 .controller('singleRecipeCtrl', function($scope, $stateParams) {
 })

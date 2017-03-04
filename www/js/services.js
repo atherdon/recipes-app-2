@@ -6,4 +6,24 @@ angular.module('app.services', [])
 
 .service('BlankService', [function(){
 
-}]);
+}])
+
+
+
+.factory('weeklyMenuAlterFactory', ['$http', function( $http ){
+
+
+    return {
+            get: function(){
+
+                return $http.get('/js/json/weeklymenu.json');
+                // return $http.get('/js/json/recipe.json');
+            }
+            
+    }
+
+}])
+
+
+
+;

@@ -16,7 +16,7 @@
             
             
             <ion-item class="item-thumbnail-left" id="weeklyMenu-list-item4" 
-            ui-sref="tabsController.recipe/:{{ item.id }}">
+            href="#/app/recipe/{{ item.id }}">
                 
                 <img src="{{ item.img }}" alt="{{ item.title }}">
                 <h2 style="white-space:normal;">
@@ -30,12 +30,12 @@
                 </h5>
                 
             </ion-item>
-            <ion-item class="item-divider" id="styledSingleRecipe-list-item-divider1"></ion-item>
+            <ion-item class="item-divider" id="weeklyMenu-list-item-divider1"></ion-item>
             
         </ion-list>
         
         
-        <button id="weeklyMenu-button1" class="button button-positive  button-block">
+        <button id="weeklyMenu-button1" class="button button-positive button-block">
             Previous week
         </button>
         

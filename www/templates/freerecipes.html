@@ -1,24 +1,20 @@
-<ion-view title="Free Recipes" id="page8">
-  <ion-content padding="true" class="has-header">
-    <ion-list id="freeRecipes-list6">
-      <ion-item id="freeRecipes-list-item11">
-      Pork Tenderloin with Roasted Cherries
-      </ion-item>
-      <ion-item id="freeRecipes-list-item12">
-      Beef, Red Pepper and Snow Pea Stir-Fry
-      </ion-item>
-      <ion-item id="freeRecipes-list-item13">
-      Meatball Sliders
-      </ion-item>
-      <ion-item id="freeRecipes-list-item14">
-      Item
-      </ion-item>
-      <ion-item id="freeRecipes-list-item15">
-      Item
-      </ion-item>
-      <ion-item id="freeRecipes-list-item16">
-      Item
-      </ion-item>
-    </ion-list>
-  </ion-content>
+<ion-view view-title="Free Recipes" id="page8">
+    <ion-content padding="true" class="has-header">
+        
+        <ion-list id="weeklyMenu-list2" ng-repeat="item in data.items"> 
+            
+            <ion-item class="item-thumbnail-left" id="freeMenu-list-item4" 
+            href="#/app/recipe/{{ item.id }}">
+                                
+                <h2 style="white-space:normal;">
+                      {{ item.title }}                      
+                </h2>
+                
+            </ion-item>
+            <ion-item class="item-divider" id="freemenu-list-item-divider1"></ion-item>
+            
+        </ion-list>
+        
+        
+    </ion-content>
 </ion-view>

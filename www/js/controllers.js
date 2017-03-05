@@ -115,7 +115,9 @@ angular.module('starter.controllers', ['app.services'])
 
 })
 
-.controller('recipesCalendarCtrl', function($scope, $stateParams) {
+.controller('recipesCalendarCtrl', function($scope, $stateParams, Calendar) {
+
+   $scope.week = [];
 })
 
 .controller('categoryCtrl', function($scope, $stateParams, Grocery) {

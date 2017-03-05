@@ -1,55 +1,59 @@
 <ion-view title="Recipes Calendar" id="page15">
   <ion-content padding="true" class="has-header">
 
-    <ion-list id="recipesCalendar-list14">
+    <ion-list id="recipesCalendar-list" ng-repeat="weekday in week" >
 
-      <ion-item class="item-icon-left" id="recipesCalendar-list-item60">
+      <ion-item class="item-icon-left" id="recipesCalendar-list-item">
         <i class="icon ion-ios-nutrition-outline"></i>
-        Monday
+        <!-- Monday  -->
+        {{ weekday.name }}
         </ion-item>
 
-      <div class="item item-body" id="recipesCalendar-list-item-container28">
-        <div id="recipesCalendar-markdown29" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">Beef, Red Pepper and Snow Pea Stir-Fry</p>
+      <div class="item item-body" id="recipesCalendar-list-item-container">
+        <div id="recipesCalendar-markdown" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">
+          <!-- Beef, Red Pepper and Snow Pea Stir-Fry -->
+          {{ weekday.recipe_title }}
+          </p>
         </div>
       </div>
 
       <ion-item class="item-divider" id="recipesCalendar-list-item-divider4"> </ion-item>
 
-      <ion-item class="item-icon-left" id="recipesCalendar-list-item61">
+      <!-- <ion-item class="item-icon-left" id="recipesCalendar-list-item61">
         <i class="icon ion-ios-nutrition-outline"></i>Tuesday</ion-item>
       <div class="item item-body" id="recipesCalendar-list-item-container29">
         <div id="recipesCalendar-markdown30" class="show-list-numbers-and-dots">
           <p style="margin-top:0px;color:#000000;">Beef, Red Pepper and Snow Pea Stir-Fry</p>
         </div>
-      </div>
+      </div> -->
 
-      <ion-item class="item-divider" id="recipesCalendar-list-item-divider5"> </ion-item>
+      <!-- <ion-item class="item-divider" id="recipesCalendar-list-item-divider5"> </ion-item>
       <ion-item class="item-icon-left" id="recipesCalendar-list-item62">
         <i class="icon ion-ios-nutrition-outline"></i>Wednesday</ion-item>
       <div class="item item-body" id="recipesCalendar-list-item-container30">
         <div id="recipesCalendar-markdown31" class="show-list-numbers-and-dots">
           <p style="margin-top:0px;color:#000000;">Beef, Red Pepper and Snow Pea Stir-Fry Pork Tenderloin with Roasted Cherries</p>
         </div>
-      </div>
+      </div> -->
 
-      <ion-item class="item-divider" id="recipesCalendar-list-item-divider6"> </ion-item>
+      <!-- <ion-item class="item-divider" id="recipesCalendar-list-item-divider6"> </ion-item>
       <ion-item class="item-icon-left" id="recipesCalendar-list-item63">
         <i class="icon ion-ios-nutrition-outline"></i>Thursday</ion-item>
       <div class="item item-body" id="recipesCalendar-list-item-container27">
       <div id="recipesCalendar-markdown28" class="show-list-numbers-and-dots">
         <p style="margin-top:0px;color:#000000;">Pork Tenderloin with Roasted Cherries</p>
       </div>
-    </div>
+    </div> -->
     
-     <ion-item class="item-divider" id="recipesCalendar-list-item-divider8"> </ion-item>
+     <!-- <ion-item class="item-divider" id="recipesCalendar-list-item-divider8"> </ion-item>
       <ion-item class="item-icon-left" id="recipesCalendar-list-item59">
         <i class="icon ion-ios-nutrition-outline"></i>Friday</ion-item>
       <div class="item item-body" id="recipesCalendar-list-item-container34">
         <div id="recipesCalendar-markdown35" class="show-list-numbers-and-dots">
           <p style="margin-top:0px;color:#000000;">Meatball Sliders</p>
         </div>
-      </div>
+      </div> -->
 
 
     </ion-list>

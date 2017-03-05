@@ -35,10 +35,6 @@ angular.module('app.services', [])
 		this.getData();
 	};
 
-	// Grocery.prototype.setCategory = function( category_id ){
-	// 	// this.category_id = category_id;
-	// 	angular.extend(self, category_id);
-	// }
 
 	Grocery.prototype.getData = function() {
 		this.data = $http.get('/js/json/grocery.json');
@@ -75,69 +71,50 @@ angular.module('app.services', [])
 	};
 
 	return Grocery;
-
 })
 
 
+.factory('Calendar', function( $http ){
+
+	var Calendar = function (  ){
+		this.data        = false;
+		// this.category_id = category_id;
+		// this.category    = false;
+
+		this.getData();
+	};
+
+	Calendar.prototype.getData = function() {
+		this.data = $http.get('/js/json/weeklymenu.json');
+	};
+
+	Calendar.prototype.fetch = function(){
+
+		var self = this;
+		var result = { 'week': [] };
+
+		return this.data.then(function(response) {
+
+	        angular.forEach( response.data.items, function(value, key){
+	    
+	        	result.week.push( [ value.weekDay.toUpperCase(), value.title ] );
+	        	
+
+	        });
+	        // console.log(result);
+	        angular.extend(self, result);
+	        return response;
+
+    	});
+	}
+
+	return Calendar;
+
+})
+
 .service('groceryCategory', ['$http', function( $http ){
 
-
-
-
-// var Grocery = function (){
-//         this.data = false;
-
-//         this.init = function(){
-//             this.getData();
-//         }
-
-//         this.getData = function(){
-//             this.data = $http.get('/js/api/grocery.json');
-//         }
-
-//         this.getCategory = function(callback){
-
-//             this.data.then(function(response) {
-
-//                 angular.forEach( response.data, function(value, key){
-
-//                     if( value.category_id == "3" ){
-
-//                         callback(value);
-                        
-//                     }
-
-//                 });
-
-//             });
-//         }
-
-//         this.getCategories = function(callback){
-
-//             var array = [];
-                
-//             this.data.then(function(response) {
-                
-//                 angular.forEach( response.data, function(value, key){
-
-//                     array.push({
-//                         "category_id" : value.category_id,
-//                         "name"        : value.name
-//                     });
-
-
-//                 });
-//                 callback(array);
-
-//             });
-//         }
-
-//         this.init();
-
-//     };
-
-//     return (Grocery);
-    
+   
 
     return {
             get: function() {

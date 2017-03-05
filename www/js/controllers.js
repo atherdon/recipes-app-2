@@ -117,7 +117,16 @@ angular.module('starter.controllers', ['app.services'])
 
 .controller('recipesCalendarCtrl', function($scope, $stateParams, Calendar) {
 
-   $scope.week = [];
+  var Cal = new Calendar();
+
+  Cal.fetch().then(function(){
+
+    
+    $scope.week = Cal.week;
+    
+  });
+
+   
 })
 
 .controller('categoryCtrl', function($scope, $stateParams, Grocery) {

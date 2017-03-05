@@ -61,6 +61,9 @@ angular.module('starter.controllers', ['app.services'])
 .controller('weeklyMenuCtrl', function($scope, $stateParams, weeklyMenuAlterFactory) {
 
   // console.log('123');
+
+  // console.log( $stateParams );
+
   weeklyMenuAlterFactory.get().then(function(response){
 
       $scope.data = response.data;
@@ -68,6 +71,18 @@ angular.module('starter.controllers', ['app.services'])
 
 })
 
+.controller('weeklyMenuPrevCtrl', function($scope, $stateParams, weeklyMenuAlterFactory) {
+
+  // console.log('123');
+
+  console.log( $stateParams );
+
+  weeklyMenuAlterFactory.get().then(function(response){
+
+      $scope.data = response.data;
+  })
+
+})
 
 
 .controller('singleRecipeCtrl', function($scope, $stateParams) {

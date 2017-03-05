@@ -53,6 +53,16 @@ angular.module('app.services', [])
 
 })
 
+.factory('grocerySettings', function($http){
+
+	var Settings = function(){
+
+	}
+
+	return Settings;
+
+})
+
 .factory('weeklyMenuAlterFactory', ['$http', function( $http ){
 
 

@@ -39,6 +39,20 @@
         <i class="icon ion-egg"></i>
         Ingredients
         </ion-item>
+
+ <ul ng-repeat="ingredient in recipe.ingredients">
+                    
+                    <li>                    
+                        {{ ingredient.quantity }}
+                        {{ ingredient.name }} - 
+                        {{ ingredient.type }}
+                    </li>
+                    
+
+                </ul>
+                
+
+
       <ion-list id="styledSingleRecipe-list7">
         <ion-item id="styledSingleRecipe-list-item24">
         2 tablespoons olive oil divided
@@ -60,10 +74,16 @@
       1.25 pounds pork tenderloin excess fat and silver skin removed
       </ion-item>
       <ion-item class="item-divider" id="styledSingleRecipe-list-item-divider2"> </ion-item>
+
+
+
+
       <ion-item class="item-icon-left" id="styledSingleRecipe-list-item32" ui-sref="directions">
         <i class="icon ion-ios-list-outline"></i>
         Directions
         </ion-item>
+
+        
       <ion-list id="styledSingleRecipe-list8">
         <ion-item id="styledSingleRecipe-list-item33">
         1 Preheat oven to 425 degrees.

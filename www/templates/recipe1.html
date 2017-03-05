@@ -17,8 +17,27 @@
     </h4>
     <div id="singleRecipe-markdown4" class="show-list-numbers-and-dots">
 
+ <ul ng-repeat="ingredient in recipe.ingredients">
+                    
+                    <li>                    
+                        {{ ingredient.quantity }}
+                        {{ ingredient.name }} - 
+                        {{ ingredient.type }}
+                    </li>
+                    
+
+                </ul>
+                
+
+
       <ul>
-        <li>2 tablespoons olive oil divided</li>
+
+        <li>
+        2 tablespoons olive oil divided
+        </li>
+
+
+
         <li>1.5 teaspoons kosher salt divided</li>
         <li>0.25 teaspoon freshly ground black pepper</li>
         <li>1 teaspoon ground cumin</li>
@@ -32,6 +51,7 @@
         <li>1 teaspoon brown sugar</li>
         <li>1 tablespoon unsalted butter</li>
         <li>0.5 cup crumbled blue cheese</li>
+
       </ul>
 
     </div>

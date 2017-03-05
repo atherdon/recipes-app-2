@@ -79,7 +79,17 @@ angular.module('starter.controllers', ['app.services'])
 .controller('signupCtrl', function($scope, $stateParams) {
 })
 
-.controller('freeRecipesCtrl', function($scope, $stateParams) {
+.controller('freeRecipesCtrl', function($scope, $stateParams, freeRecipes) {
+
+  var List = new FreeRecipes();
+
+  List.fetch().then(function(){
+
+    
+    $scope.array = List.list;
+    
+  });
+
 })
 
 .controller('styledSingleRecipeCtrl', function($scope, $stateParams) {

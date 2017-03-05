@@ -8,7 +8,50 @@ angular.module('app.services', [])
 
 }])
 
+.factory('freeRecipes', function( $http ){
 
+	var FreeRecipes = function(){
+		this.data        = false;		
+
+		this.getData();
+	};
+
+	FreeRecipes.prototype.getData = function() {
+		this.data = $http.get('/js/json/weeklymenu.json');
+	};
+
+	FreeRecipes.prototype.getCategory = function(){
+
+		// console.log( this.data );
+		var self = this;
+
+		return this.data.then(function(response) {
+
+
+			// console.log( response.data );
+
+	        angular.forEach( response.data, function(value, key){
+
+	            if( value.category_id == self.category_id ){
+
+
+	            	angular.extend(self, value);	
+	            	// self.category = value;
+	            	// console.log( value );
+
+	            	return response;
+	                // callback(value);
+	                
+	            }
+
+	        });
+
+    	});
+	};
+
+	return FreeRecipes;
+
+})
 
 .factory('weeklyMenuAlterFactory', ['$http', function( $http ){
 

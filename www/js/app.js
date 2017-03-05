@@ -81,6 +81,17 @@ $stateProvider
       }
     })
 
+
+.state('app.previousweek', {
+      url: '/weeklymenu/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/weeklymenu.html',
+          controller: 'weeklyMenuPrevCtrl'
+        }
+      }
+    })
+
 .state('app.recipe1', {
       url: '/recipe1',
       views: {

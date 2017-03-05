@@ -118,7 +118,7 @@ angular.module('starter.controllers', ['app.services'])
 .controller('recipesCalendarCtrl', function($scope, $stateParams) {
 })
 
-.controller('categoryCtrl', function($scope, $stateParams, groceryCategory, Grocery) {
+.controller('categoryCtrl', function($scope, $stateParams, Grocery) {
 
 
 //    @TODO create a service method for getting only values(array) for only one category.
@@ -135,17 +135,12 @@ angular.module('starter.controllers', ['app.services'])
 
   GL.getCategory().then(function(){
 
-    console.log( GL );
-    // console.log(GL.category);
+    // console.log( GL );
+    
     $scope.title       = GL.name;
     $scope.ingredients = GL.items;
   });
 
-   // groceryCategory.getCategory( function(data){
-   //    console.log( data.items );
-   //    $scope.ingredients = data.items;
-
-   //  });
 
 })
 

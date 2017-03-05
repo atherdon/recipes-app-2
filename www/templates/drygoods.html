@@ -1,14 +1,23 @@
-<ion-view title="DRY GOODS" id="page16">
+<ion-view id="page16">
+
+  <ion-nav-title>
+      {{ data.name }}
+  </ion-nav-title>
+
   <ion-content padding="true" class="has-header">
     <div class="item item-body" id="dRYGOODS-list-item-container35">
-      <form id="dRYGOODS-form8" class="list">
-        <ion-checkbox id="dRYGOODS-checkbox1">Ketchup 0.2 cup</ion-checkbox>
-        <ion-checkbox id="dRYGOODS-checkbox2">Kosher salt and freshly good paper</ion-checkbox>
-        <ion-checkbox id="dRYGOODS-checkbox3">Olive Oil</ion-checkbox>
-        <ion-checkbox id="dRYGOODS-checkbox4">Mascarpone</ion-checkbox>
-        <ion-checkbox id="dRYGOODS-checkbox5">Lemon </ion-checkbox>
-        <ion-checkbox id="dRYGOODS-checkbox6">Raspberries</ion-checkbox>
+      <form id="dRYGOODS-form8" class="list" ng-repeat="ing in ingredients">
+                
+            <!--@TODO word-wrap apply to labels. or make it font-size less-->
+            <ion-checkbox ng-change="save(ing.id)" ng-model="objc[ing.id]">
+                <!--{{ ing.id }} --> 
+                {{ ing.units }} - 
+                {{ ing.name }} 
+            </ion-checkbox>
+            
+              
       </form>
+
     </div>
   </ion-content>
 </ion-view>

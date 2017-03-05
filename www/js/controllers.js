@@ -118,7 +118,21 @@ angular.module('starter.controllers', ['app.services'])
 .controller('recipesCalendarCtrl', function($scope, $stateParams) {
 })
 
-.controller('dRYGOODSCtrl', function($scope, $stateParams) {
+.controller('dRYGOODSCtrl', function($scope, $stateParams, groceryCategory) {
+
+
+//    @TODO create a service method for getting only values(array) for only one category.
+//    get needed category id from service method with passing category id from view
+// remove pages like grocery food categories and create a groceryCategoryList with passing data to it
+
+// @TODO add page for flushing checkboxes
+
+   groceryCategory.getCategory( function(data){
+      console.log( data.items );
+        $scope.ingredients = data.items;
+
+    });
+
 })
 
 ;

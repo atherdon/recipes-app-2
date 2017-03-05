@@ -85,16 +85,38 @@ angular.module('starter.controllers', ['app.services'])
 .controller('styledSingleRecipeCtrl', function($scope, $stateParams) {
 })
 
-.controller('ingredientsCtrl', function($scope, $stateParams) {
+.controller('ingredientsCtrl', function($scope, $stateParams, Ingredients) {
+
+  var List = new Ingredients();
+
+  List.fetch().then(function(){
+
+    
+    $scope.week = List.list;
+    
+  });
+
+})
+
+
+
+.controller('directionsCtrl', function($scope, $stateParams, Directions) {
+
+  var List = new Directions();
+
+  List.fetch().then(function(){
+
+    
+    $scope.week = List.list;
+    
+  });
+
 })
 
 .controller('uXSingleRecipeCtrl', function($scope, $stateParams) {
 })
 
 .controller('uXSingleRecipe2Ctrl', function($scope, $stateParams) {
-})
-
-.controller('directionsCtrl', function($scope, $stateParams) {
 })
 
 .controller('groceryListSettingsCtrl', function($scope, $stateParams) {

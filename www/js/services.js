@@ -74,10 +74,78 @@ angular.module('app.services', [])
 })
 
 
+.factory('recipeDirections', function( $http ){
+
+	var Directions = function( recipe_id ){
+		this.data = false;
+		this.getData();
+	}
+
+	Directions.prototype.getData() = function(){
+		this.data = $http.get('/js/json/recipe.json');
+	}
+
+	Directions.prototype.fetch = function(){
+		var self = this;
+		
+		return this.data.then(function(response) {
+
+	        // angular.forEach( response.data.items, function(value, key){
+	    
+	        // 	result.week.push( [ value.weekDay.toUpperCase(), value.title ] );
+	        	
+
+	        // });
+	        // console.log(result);
+	        angular.extend(self, { 'list': response.data.steps });
+	        return response;
+
+    	});
+	}
+
+	return Calendar;
+
+})
+
+.factory('recipeIngredients', function( $http ){
+
+	var Ingredients = function( recipe_id ){
+		this.data = false;
+		this.getData();
+	}
+
+	Ingredients.prototype.getData() = function(){
+		this.data = $http.get('/js/json/recipe.json');
+	}
+
+	Ingredients.prototype.fetch = function(){
+		var self = this;
+		
+		return this.data.then(function(response) {
+
+	        // angular.forEach( response.data.items, function(value, key){
+	    
+	        // 	result.week.push( [ value.weekDay.toUpperCase(), value.title ] );
+	        	
+
+	        // });
+	        // console.log(result);
+	        angular.extend(self, { 'list': response.data.ingredients });
+	        return response;
+
+    	});
+	}
+
+	return Ingredients;
+
+})
+
+
+
 .factory('Calendar', function( $http ){
 
 	var Calendar = function (  ){
-		this.data        = false;
+		this.data = false;
 		// this.category_id = category_id;
 		// this.category    = false;
 

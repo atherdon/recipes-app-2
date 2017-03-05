@@ -92,7 +92,7 @@ angular.module('starter.controllers', ['app.services'])
   List.fetch().then(function(){
 
     
-    $scope.week = List.list;
+    $scope.array = List.list;
     
   });
 
@@ -107,7 +107,7 @@ angular.module('starter.controllers', ['app.services'])
   List.fetch().then(function(){
 
     
-    $scope.week = List.list;
+    $scope.array = List.list;
     
   });
 

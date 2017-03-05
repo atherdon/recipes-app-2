@@ -25,8 +25,64 @@ angular.module('app.services', [])
 }])
 
 
+.factory('Grocery', function($http){
+
+	var Grocery = function ( category_id ){
+		this.data        = false;
+		this.category_id = category_id;
+		// this.category    = false;
+
+		this.getData();
+	};
+
+	// Grocery.prototype.setCategory = function( category_id ){
+	// 	// this.category_id = category_id;
+	// 	angular.extend(self, category_id);
+	// }
+
+	Grocery.prototype.getData = function() {
+		this.data = $http.get('/js/json/grocery.json');
+	};
+
+
+	Grocery.prototype.getCategory = function(){
+
+		// console.log( this.data );
+		var self = this;
+
+		return this.data.then(function(response) {
+
+
+			// console.log( response.data );
+
+	        angular.forEach( response.data, function(value, key){
+
+	            if( value.category_id == self.category_id ){
+
+
+	            	angular.extend(self, value);	
+	            	// self.category = value;
+	            	// console.log( value );
+
+	            	return response;
+	                // callback(value);
+	                
+	            }
+
+	        });
+
+    	});
+	};
+
+	return Grocery;
+
+})
+
 
 .service('groceryCategory', ['$http', function( $http ){
+
+
+
 
 // var Grocery = function (){
 //         this.data = false;
@@ -91,6 +147,8 @@ angular.module('app.services', [])
 
             getCategory: function(callback) {
                 
+
+
                 $http.get('/js/json/grocery.json').then(function(response) {
                     
                     angular.forEach( response.data, function(value, key){
@@ -108,7 +166,7 @@ angular.module('app.services', [])
                 
 
             },
-            
+
             getCategories: function(callback){
                 
                 var array = [];

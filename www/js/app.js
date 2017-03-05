@@ -202,12 +202,12 @@ $stateProvider
     })
 
 
-.state('app.drygoods', {
-      url: '/drygoods',
+.state('app.category', {
+      url: '/category/:categoryId',
       views: {
         'menuContent': {
-          templateUrl: 'templates/drygoods.html',
-          controller: 'dRYGOODSCtrl'
+          templateUrl: 'templates/category.html',
+          controller: 'categoryCtrl'
         }
       }
     })

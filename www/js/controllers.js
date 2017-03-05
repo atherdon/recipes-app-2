@@ -118,7 +118,7 @@ angular.module('starter.controllers', ['app.services'])
 .controller('recipesCalendarCtrl', function($scope, $stateParams) {
 })
 
-.controller('dRYGOODSCtrl', function($scope, $stateParams, groceryCategory) {
+.controller('categoryCtrl', function($scope, $stateParams, groceryCategory, Grocery) {
 
 
 //    @TODO create a service method for getting only values(array) for only one category.
@@ -127,11 +127,25 @@ angular.module('starter.controllers', ['app.services'])
 
 // @TODO add page for flushing checkboxes
 
-   groceryCategory.getCategory( function(data){
-      console.log( data.items );
-        $scope.ingredients = data.items;
 
-    });
+
+  // console.log( $stateParams.categoryId );
+
+  var GL = new Grocery( $stateParams.categoryId );
+
+  GL.getCategory().then(function(){
+
+    console.log( GL );
+    // console.log(GL.category);
+    $scope.title       = GL.name;
+    $scope.ingredients = GL.items;
+  });
+
+   // groceryCategory.getCategory( function(data){
+   //    console.log( data.items );
+   //    $scope.ingredients = data.items;
+
+   //  });
 
 })
 

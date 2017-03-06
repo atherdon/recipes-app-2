@@ -59,6 +59,8 @@ angular.module('app.services', [])
 
 	}
 
+	//i need recipe title and id
+
 	return Settings;
 
 })

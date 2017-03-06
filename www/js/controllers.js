@@ -85,8 +85,6 @@ angular.module('starter.controllers', ['app.services'])
 })
 
 
-.controller('singleRecipeCtrl', function($scope, $stateParams) {
-})
 
 .controller('loginCtrl', function($scope, $stateParams) {
 })
@@ -107,8 +105,6 @@ angular.module('starter.controllers', ['app.services'])
 
 })
 
-.controller('styledSingleRecipeCtrl', function($scope, $stateParams) {
-})
 
 .controller('ingredientsCtrl', function($scope, $stateParams, Ingredients) {
 
@@ -138,13 +134,46 @@ angular.module('starter.controllers', ['app.services'])
 
 })
 
+.controller('singleRecipeCtrl', function($scope, $stateParams) {
+
+  var recipe = new Grocery( $stateParams.categoryId );
+
+  recipe.fetch().then(function(){
+
+    if( recipe ){
+
+      // $scope.title       = GL.name;
+      // $scope.ingredients = GL.items;
+
+    } else {
+
+      $scope.message = "Nukhua netu dannuh y recepta etogo";
+    }
+
+    // console.log( recipe );
+    
+    $scope.title       = GL.name;
+    $scope.ingredients = GL.items;
+  });
+
+})
+
+.controller('styledSingleRecipeCtrl', function($scope, $stateParams) {
+
+})
+
 .controller('uXSingleRecipeCtrl', function($scope, $stateParams) {
+
 })
 
 .controller('uXSingleRecipe2Ctrl', function($scope, $stateParams) {
+
+
 })
 
-.controller('groceryListSettingsCtrl', function($scope, $stateParams) {
+.controller('groceryListSettingsCtrl', function($scope, $stateParams, Settings) {
+
+
 })
 
 .controller('groceryListCtrl', function($scope, $stateParams, groceryCategory) {

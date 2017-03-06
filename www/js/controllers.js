@@ -136,10 +136,11 @@ angular.module('starter.controllers', ['app.services'])
 
 .controller('singleRecipeCtrl', function($scope, $stateParams) {
 
-  var recipe = new Grocery( $stateParams.categoryId );
+  var recipe = new Grocery( $stateParams.recipeId );
 
   recipe.fetch().then(function(){
 
+    // check if recipe have all important information. This is not completed. Must be.
     if( recipe ){
 
       // $scope.title       = GL.name;

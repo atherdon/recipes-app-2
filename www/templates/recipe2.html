@@ -40,20 +40,36 @@
         Ingredients
         </ion-item>
 
- <ul ng-repeat="ingredient in recipe.ingredients">
+        <ul ng-repeat="ingredient in recipe.ingredients">
                     
-                    <li>                    
-                        {{ ingredient.quantity }}
-                        {{ ingredient.name }} - 
-                        {{ ingredient.type }}
-                    </li>
-                    
+            <li>                    
+                
+            </li>
+            
 
-                </ul>
+        </ul>
                 
 
+      <ion-list id="styledSingleRecipe-list" ng-repeat="ingredient in recipe.ingredients">
+        <ion-item id="styledSingleRecipe-list-item24">
+          {{ ingredient.quantity }}
+          {{ ingredient.name }} - 
+          {{ ingredient.type }}
+        </ion-item>
 
-      <ion-list id="styledSingleRecipe-list7">
+        <!-- <ion-item id="styledSingleRecipe-list-item25">
+        1.5 teaspoons kosher salt divided
+        </ion-item>
+        <ion-item id="styledSingleRecipe-list-item26">
+        0.25 teaspoon freshly ground black pepper
+        </ion-item> -->
+
+      </ion-list>          
+
+
+
+
+   <!--    <ion-list id="styledSingleRecipe-list7">
         <ion-item id="styledSingleRecipe-list-item24">
         2 tablespoons olive oil divided
         </ion-item>
@@ -63,8 +79,8 @@
         <ion-item id="styledSingleRecipe-list-item26">
         0.25 teaspoon freshly ground black pepper
         </ion-item>
-      </ion-list>
-      <ion-item id="styledSingleRecipe-list-item27">
+      </ion-list> -->
+      <!-- <ion-item id="styledSingleRecipe-list-item27">
       1 teaspoon ground cumin
       </ion-item>
       <ion-item id="styledSingleRecipe-list-item28">
@@ -72,7 +88,9 @@
       </ion-item>
       <ion-item id="styledSingleRecipe-list-item29">
       1.25 pounds pork tenderloin excess fat and silver skin removed
-      </ion-item>
+      </ion-item> -->
+
+      
       <ion-item class="item-divider" id="styledSingleRecipe-list-item-divider2"> </ion-item>
 
 
@@ -83,7 +101,7 @@
         Directions
         </ion-item>
 
-        
+
       <ion-list id="styledSingleRecipe-list8">
         <ion-item id="styledSingleRecipe-list-item33">
         1 Preheat oven to 425 degrees.

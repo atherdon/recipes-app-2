@@ -65,19 +65,138 @@ angular.module('app.services', [])
 
 })
 
-.factory('weeklyMenuAlterFactory', ['$http', function( $http ){
+.factory('WM2', function($http){
+
+	var WeeklyMenu = function (){
+		this.data        = false;
+		// this.category_id = category_id;
+		// this.category    = false;
+		this.weeklyData  = false;
+
+		this.getData();
+	};
 
 
-    return {
-            get: function(){
+	WeeklyMenu.prototype.getData = function() {
+		this.data = return $http.get('/js/json/weekly.json');
+	};
 
-                return $http.get('/js/json/weeklymenu.json');
-                // return $http.get('/js/json/recipe.json');
-            }
+	return WeeklyMenu;
+
+})
+
+// .factory('weeklyMenuAlterFactory', function( $http ){
+
+// 	var WeeklyMenu = function (){
+// 		this.data        = {};
+// 		// this.category_id = category_id;
+// 		// this.category    = false;
+// 		this.weeklyData  = {};
+
+// 		this.getData();
+// 	};
+
+
+// 	WeeklyMenu.prototype.getData = function() {
+// 		this.data = return $http.get('/js/json/weeklyMenus.json');
+// 	};
+
+
+// 	WeeklyMenu.prototype.fetch = function(){
+
+// 		// console.log( this.data );
+// 		var self = this;
+
+// 		return this.data.then(function(response) {
+
+
+// 			console.log( response.data );
+
+// 	        angular.forEach( response.data, function(value, key){
+
+
+// 	        	//get only first weekly menu object
+
+// 	        	self.weeklyData = value;	
+// 	        //     // if( value.category_id == self.category_id ){
+
+
+// 	        //     	// angular.extend(self, value);	
+// 	        //     	// self.category = value;
+// 	        //     	// console.log( value );
+
+// 	            	return response;
+	        
+	                
+// 	        //     // }
+
+// 	        });
+
+//     	});
+// 	};
+
+// 	WeeklyMenu.prototype.getMeta = function(){
+
+
+// 		return {
+// 			this.data.meta.title,
+// 			this.data.meta.description	
+// 		}
+// 	}
+
+// 	WeeklyMenu.prototype.getItemsForWeeklyMenuPage = function(){
+
+// 		var array = [];
+
+// 		angular.forEach( this.data.items, function(value, key){
+
+
+// 	        	//get only first weekly menu object
+
+// 	        	// self.weeklyData = value;	
+// 	        //     // if( value.category_id == self.category_id ){
+
+// 	        	console.log( value.weekDay );
+// 	        	console.log( value.title );
+// 	        	console.log( value.id );
+// 	        	console.log( value.img );
+// 	        	console.log( value.recipeDescription );
+	        	 
+	        	 
+	        	 
+	        	 
+	        	 
+
+// 	        var b = [
+
+// 	        ];	
+//         	// array.push( [ value.weekDay.toUpperCase(), value.title ] );
+	        	
+// 	        //     	// angular.extend(self, value);	
+// 	        //     	// self.category = value;
+// 	        //     	// console.log( value );
+
+// 	            	// return response;
+	        
+	                
+// 	        //     // }
+
+// 	        });
+
+// 	}
+
+// 	return WeeklyMenu;
+
+//     // return {
+//     //         get: function(){
+
+                
+//     //             // return $http.get('/js/json/recipe.json');
+//     //         }
             
-    }
+//     // }
 
-}])
+// })
 
 
 .factory('Grocery', function($http){

@@ -58,16 +58,26 @@ angular.module('starter.controllers', ['app.services'])
 
 
 /* recipes stuff */
-.controller('weeklyMenuCtrl', function($scope, $stateParams, weeklyMenuAlterFactory) {
+.controller('weeklyMenuCtrl', function($scope, $stateParams, WM2) {
 
   // console.log('123');
 
   // console.log( $stateParams );
 
-  weeklyMenuAlterFactory.get().then(function(response){
+  var WM = new WeeklyMenu();
+  WM.fetch().then(function(){
 
-      $scope.data = response.data;
-  })
+    WM.getItemsForWeeklyMenuPage();
+    // $scope.week = WM.week;
+    
+  });
+
+  // weeklyMenuAlterFactory.get().then(function(response){
+
+  //     $scope.data = response.data;
+  // })
+
+
 
 })
 

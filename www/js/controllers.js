@@ -58,19 +58,32 @@ angular.module('starter.controllers', ['app.services'])
 
 
 /* recipes stuff */
-.controller('weeklyMenuCtrl', function($scope, $stateParams, WM2) {
+.controller('weeklyMenuCtrl', function($scope, $stateParams, WeeklyMenu) {
 
   // console.log('123');
 
   // console.log( $stateParams );
 
   var WM = new WeeklyMenu();
-  WM.fetch().then(function(){
 
-    WM.getItemsForWeeklyMenuPage();
-    // $scope.week = WM.week;
+  WM.getItemsForWeeklyMenuPage().then(function(){
     
+    console.log(WM.meta);
+    console.log(WM.items);
+
   });
+  // WM.fetch().then(function(){
+
+     // 
+    
+  // });
+  
+  // WM.fetch().then(function(){
+
+  //   WM.getItemsForWeeklyMenuPage();
+  // //   // $scope.week = WM.week;
+    
+  // });
 
   // weeklyMenuAlterFactory.get().then(function(response){
 
@@ -81,18 +94,18 @@ angular.module('starter.controllers', ['app.services'])
 
 })
 
-.controller('weeklyMenuPrevCtrl', function($scope, $stateParams, weeklyMenuAlterFactory) {
+// .controller('weeklyMenuPrevCtrl', function($scope, $stateParams, weeklyMenuAlterFactory) {
 
-  // console.log('123');
+//   // console.log('123');
 
-  console.log( $stateParams );
+//   console.log( $stateParams );
 
-  weeklyMenuAlterFactory.get().then(function(response){
+//   weeklyMenuAlterFactory.get().then(function(response){
 
-      $scope.data = response.data;
-  })
+//       $scope.data = response.data;
+//   })
 
-})
+// })
 
 
 
@@ -102,144 +115,144 @@ angular.module('starter.controllers', ['app.services'])
 .controller('signupCtrl', function($scope, $stateParams) {
 })
 
-.controller('freeRecipesCtrl', function($scope, $stateParams, freeRecipes) {
+// .controller('freeRecipesCtrl', function($scope, $stateParams, freeRecipes) {
 
-  var List = new FreeRecipes();
+//   var List = new FreeRecipes();
 
-  List.fetch().then(function(){
-
-    
-    $scope.array = List.list;
-    
-  });
-
-})
-
-
-.controller('ingredientsCtrl', function($scope, $stateParams, Ingredients) {
-
-  var List = new Ingredients();
-
-  List.fetch().then(function(){
+//   List.fetch().then(function(){
 
     
-    $scope.array = List.list;
+//     $scope.array = List.list;
     
-  });
+//   });
 
-})
-
-
-
-.controller('directionsCtrl', function($scope, $stateParams, Directions) {
-
-  var List = new Directions();
-
-  List.fetch().then(function(){
-
-    
-    $scope.array = List.list;
-    
-  });
-
-})
-
-.controller('singleRecipeCtrl', function($scope, $stateParams) {
-
-  var recipe = new Grocery( $stateParams.recipeId );
-
-  recipe.fetch().then(function(){
-
-    // check if recipe have all important information. This is not completed. Must be.
-    if( recipe ){
-
-      // $scope.title       = GL.name;
-      // $scope.ingredients = GL.items;
-
-    } else {
-
-      $scope.message = "Nukhua netu dannuh y recepta etogo";
-    }
-
-    // console.log( recipe );
-    
-    $scope.title       = GL.name;
-    $scope.ingredients = GL.items;
-  });
-
-})
-
-.controller('styledSingleRecipeCtrl', function($scope, $stateParams) {
-
-})
-
-.controller('uXSingleRecipeCtrl', function($scope, $stateParams) {
-
-})
-
-.controller('uXSingleRecipe2Ctrl', function($scope, $stateParams) {
+// })
 
 
-})
+// .controller('ingredientsCtrl', function($scope, $stateParams, Ingredients) {
 
-.controller('groceryListSettingsCtrl', function($scope, $stateParams, Settings) {
+//   var List = new Ingredients();
 
-
-})
-
-.controller('groceryListCtrl', function($scope, $stateParams, groceryCategory) {
-
-//@TODO remove getting info and move it to services.
-//Looks awful right now. Also remove not necessary variables from constructor and method
-    
-    groceryCategory.getCategories( function(data){
-
-      console.log(data);
-
-      $scope.categories = data;
-
-    });
-
-})
-
-.controller('recipesCalendarCtrl', function($scope, $stateParams, Calendar) {
-
-  var Cal = new Calendar();
-
-  Cal.fetch().then(function(){
+//   List.fetch().then(function(){
 
     
-    $scope.week = Cal.week;
+//     $scope.array = List.list;
     
-  });
+//   });
+
+// })
+
+
+
+// .controller('directionsCtrl', function($scope, $stateParams, Directions) {
+
+//   var List = new Directions();
+
+//   List.fetch().then(function(){
+
+    
+//     $scope.array = List.list;
+    
+//   });
+
+// })
+
+// .controller('singleRecipeCtrl', function($scope, $stateParams) {
+
+//   var recipe = new Grocery( $stateParams.recipeId );
+
+//   recipe.fetch().then(function(){
+
+//     // check if recipe have all important information. This is not completed. Must be.
+//     if( recipe ){
+
+//       // $scope.title       = GL.name;
+//       // $scope.ingredients = GL.items;
+
+//     } else {
+
+//       $scope.message = "Nukhua netu dannuh y recepta etogo";
+//     }
+
+//     // console.log( recipe );
+    
+//     $scope.title       = GL.name;
+//     $scope.ingredients = GL.items;
+//   });
+
+// })
+
+// .controller('styledSingleRecipeCtrl', function($scope, $stateParams) {
+
+// })
+
+// .controller('uXSingleRecipeCtrl', function($scope, $stateParams) {
+
+// })
+
+// .controller('uXSingleRecipe2Ctrl', function($scope, $stateParams) {
+
+
+// })
+
+// .controller('groceryListSettingsCtrl', function($scope, $stateParams, Settings) {
+
+
+// })
+
+// .controller('groceryListCtrl', function($scope, $stateParams, groceryCategory) {
+
+// //@TODO remove getting info and move it to services.
+// //Looks awful right now. Also remove not necessary variables from constructor and method
+    
+//     groceryCategory.getCategories( function(data){
+
+//       console.log(data);
+
+//       $scope.categories = data;
+
+//     });
+
+// })
+
+// .controller('recipesCalendarCtrl', function($scope, $stateParams, Calendar) {
+
+//   var Cal = new Calendar();
+
+//   Cal.fetch().then(function(){
+
+    
+//     $scope.week = Cal.week;
+    
+//   });
 
    
-})
+// })
 
-.controller('categoryCtrl', function($scope, $stateParams, Grocery) {
-
-
-//    @TODO create a service method for getting only values(array) for only one category.
-//    get needed category id from service method with passing category id from view
-// remove pages like grocery food categories and create a groceryCategoryList with passing data to it
-
-// @TODO add page for flushing checkboxes
+// .controller('categoryCtrl', function($scope, $stateParams, Grocery) {
 
 
+// //    @TODO create a service method for getting only values(array) for only one category.
+// //    get needed category id from service method with passing category id from view
+// // remove pages like grocery food categories and create a groceryCategoryList with passing data to it
 
-  // console.log( $stateParams.categoryId );
+// // @TODO add page for flushing checkboxes
 
-  var GL = new Grocery( $stateParams.categoryId );
 
-  GL.getCategory().then(function(){
 
-    // console.log( GL );
+//   // console.log( $stateParams.categoryId );
+
+//   var GL = new Grocery( $stateParams.categoryId );
+
+//   GL.getCategory().then(function(){
+
+//     // console.log( GL );
     
-    $scope.title       = GL.name;
-    $scope.ingredients = GL.items;
-  });
+//     $scope.title       = GL.name;
+//     $scope.ingredients = GL.items;
+//   });
 
 
-})
+// })
 
 ;

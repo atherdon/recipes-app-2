@@ -8,407 +8,150 @@ angular.module('app.services', [])
 
 }])
 
-.factory('freeRecipes', function( $http ){
-
-	var FreeRecipes = function(){
-		this.data        = false;		
-
-		this.getData();
-	};
-
-	FreeRecipes.prototype.getData = function() {
-		this.data = $http.get('/js/json/weeklymenu.json');
-	};
-
-	FreeRecipes.prototype.getCategory = function(){
-
-		// console.log( this.data );
-		var self = this;
-
-		return this.data.then(function(response) {
-
-
-			// console.log( response.data );
-
-	        angular.forEach( response.data, function(value, key){
-
-	            if( value.category_id == self.category_id ){
-
-
-	            	angular.extend(self, value);	
-	            	// self.category = value;
-	            	// console.log( value );
-
-	            	return response;
-	                // callback(value);
-	                
-	            }
-
-	        });
-
-    	});
-	};
-
-	return FreeRecipes;
-
-})
-
-.factory('grocerySettings', function($http){
-
-	var Settings = function(){
-
-	}
-
-	//i need recipe title and id
-
-	return Settings;
-
-})
-
-.factory('WM2', function($http){
+.factory('WeeklyMenu', function( $http ){
 
 	var WeeklyMenu = function (){
+
 		this.data        = false;
 		// this.category_id = category_id;
 		// this.category    = false;
-		this.weeklyData  = false;
+		
+		this.meta        = false;
+		this.items       = false;
 
 		this.getData();
+		this.fetch();
 	};
+
 
 
 	WeeklyMenu.prototype.getData = function() {
-		this.data = return $http.get('/js/json/weekly.json');
+		this.data = $http.get('/js/json/weekly.json');
+		// console.log('123');
 	};
+
+	// work only like inner method (don't use it now like promise with then()...)
+	WeeklyMenu.prototype.fetch = function(){
+
+		var array = { meta:[] };
+		var self       = this;
+
+		this.data.then(function(response){
+			
+         	array.meta.push([
+        		response.data.meta.id,
+        		response.data.meta.title,
+        		response.data.meta.description
+    		]);
+
+			angular.extend(self, array);
+
+			return response;
+
+		});
+	};
+
+	WeeklyMenu.prototype.getItemsForWeeklyMenuPage = function(){
+
+		// var array.items = [];
+		var array = { items:[] };
+		var self        = this;
+
+		return this.data.then(function(response){
+			// console.log(response);
+
+			angular.forEach( response.data.items, function(value, key){
+
+            	
+	 //        	//get only first weekly menu object
+	 // @TODO check if we got empty values
+	        	// console.log( value.weekDay );
+	        	// console.log( value.title );
+	        	// console.log( value.id );
+	        	// console.log( value.img );
+	        	// console.log( value.recipeDescription );
+
+	        	// var b = [	        	
+
+	        	// ];	
+
+        		array.items.push( [ 
+        			value.id, 
+        			value.weekDay.toUpperCase(), 
+        			value.title,
+        			value.img,
+        			value.recipeDescription 
+    			] );
+
+			});
+
+			// console.log( array );
+			angular.extend(self, array);
+
+
+			return response;
+		});
+
+
+	};
+
+		
+
+		// angular.forEach( this.data.items, function(value, key){
+
+
+	        	 
+	        	 
+	        	 
+	        	 
+	        	 
+
+	 //        
+	        	
+	 //        //     	// angular.extend(self, value);	
+	 //        //     	// self.category = value;
+	 //        //     	// console.log( value );
+
+	 //            	// return response;
+	        
+	                
+  //       }
+
+  //   };
+
+	// 	this.data.then(function(response){
+	// 		console.log(response);
+
+	//         angular.forEach( response.data, function(value, key){
+
+
+	//         	//get only first weekly menu object
+	//         	self.weeklyData = value;	
+	//         //     // if( value.category_id == self.category_id ){
+
+
+	//         //     	// angular.extend(self, value);	
+	//         //     	// self.category = value;
+ //            	console.log( value );
+
+ //            	return response;
+	        
+	                
+	//         //     // }
+
+	//         });
+
+
+	// 	})
+
+		
+	// };
+
+
 
 	return WeeklyMenu;
 
 })
-
-// .factory('weeklyMenuAlterFactory', function( $http ){
-
-// 	var WeeklyMenu = function (){
-// 		this.data        = {};
-// 		// this.category_id = category_id;
-// 		// this.category    = false;
-// 		this.weeklyData  = {};
-
-// 		this.getData();
-// 	};
-
-
-// 	WeeklyMenu.prototype.getData = function() {
-// 		this.data = return $http.get('/js/json/weeklyMenus.json');
-// 	};
-
-
-// 	WeeklyMenu.prototype.fetch = function(){
-
-// 		// console.log( this.data );
-// 		var self = this;
-
-// 		return this.data.then(function(response) {
-
-
-// 			console.log( response.data );
-
-// 	        angular.forEach( response.data, function(value, key){
-
-
-// 	        	//get only first weekly menu object
-
-// 	        	self.weeklyData = value;	
-// 	        //     // if( value.category_id == self.category_id ){
-
-
-// 	        //     	// angular.extend(self, value);	
-// 	        //     	// self.category = value;
-// 	        //     	// console.log( value );
-
-// 	            	return response;
-	        
-	                
-// 	        //     // }
-
-// 	        });
-
-//     	});
-// 	};
-
-// 	WeeklyMenu.prototype.getMeta = function(){
-
-
-// 		return {
-// 			this.data.meta.title,
-// 			this.data.meta.description	
-// 		}
-// 	}
-
-// 	WeeklyMenu.prototype.getItemsForWeeklyMenuPage = function(){
-
-// 		var array = [];
-
-// 		angular.forEach( this.data.items, function(value, key){
-
-
-// 	        	//get only first weekly menu object
-
-// 	        	// self.weeklyData = value;	
-// 	        //     // if( value.category_id == self.category_id ){
-
-// 	        	console.log( value.weekDay );
-// 	        	console.log( value.title );
-// 	        	console.log( value.id );
-// 	        	console.log( value.img );
-// 	        	console.log( value.recipeDescription );
-	        	 
-	        	 
-	        	 
-	        	 
-	        	 
-
-// 	        var b = [
-
-// 	        ];	
-//         	// array.push( [ value.weekDay.toUpperCase(), value.title ] );
-	        	
-// 	        //     	// angular.extend(self, value);	
-// 	        //     	// self.category = value;
-// 	        //     	// console.log( value );
-
-// 	            	// return response;
-	        
-	                
-// 	        //     // }
-
-// 	        });
-
-// 	}
-
-// 	return WeeklyMenu;
-
-//     // return {
-//     //         get: function(){
-
-                
-//     //             // return $http.get('/js/json/recipe.json');
-//     //         }
-            
-//     // }
-
-// })
-
-
-.factory('Grocery', function($http){
-
-	var Grocery = function ( category_id ){
-		this.data        = false;
-		this.category_id = category_id;
-		// this.category    = false;
-
-		this.getData();
-	};
-
-
-	Grocery.prototype.getData = function() {
-		this.data = $http.get('/js/json/grocery.json');
-	};
-
-
-	Grocery.prototype.getCategory = function(){
-
-		// console.log( this.data );
-		var self = this;
-
-		return this.data.then(function(response) {
-
-
-			// console.log( response.data );
-
-	        angular.forEach( response.data, function(value, key){
-
-	            if( value.category_id == self.category_id ){
-
-
-	            	angular.extend(self, value);	
-	            	// self.category = value;
-	            	// console.log( value );
-
-	            	return response;
-	                // callback(value);
-	                
-	            }
-
-	        });
-
-    	});
-	};
-
-	return Grocery;
-})
-
-
-.factory('recipeDirections', function( $http ){
-
-	var Directions = function( recipe_id ){
-		this.data = false;
-		this.getData();
-	}
-
-	Directions.prototype.getData() = function(){
-		this.data = $http.get('/js/json/recipe.json');
-	}
-
-	Directions.prototype.fetch = function(){
-		var self = this;
-		
-		return this.data.then(function(response) {
-
-	        // angular.forEach( response.data.items, function(value, key){
-	    
-	        // 	result.week.push( [ value.weekDay.toUpperCase(), value.title ] );
-	        	
-
-	        // });
-	        // console.log(result);
-	        angular.extend(self, { 'list': response.data.steps });
-	        return response;
-
-    	});
-	}
-
-	return Calendar;
-
-})
-
-.factory('recipeIngredients', function( $http ){
-
-	var Ingredients = function( recipe_id ){
-		this.data = false;
-		this.getData();
-	}
-
-	Ingredients.prototype.getData() = function(){
-		this.data = $http.get('/js/json/recipe.json');
-	}
-
-	Ingredients.prototype.fetch = function(){
-		var self = this;
-		
-		return this.data.then(function(response) {
-
-	        // angular.forEach( response.data.items, function(value, key){
-	    
-	        // 	result.week.push( [ value.weekDay.toUpperCase(), value.title ] );
-	        	
-
-	        // });
-	        // console.log(result);
-	        angular.extend(self, { 'list': response.data.ingredients });
-	        return response;
-
-    	});
-	}
-
-	return Ingredients;
-
-})
-
-
-
-.factory('Calendar', function( $http ){
-
-	var Calendar = function (  ){
-		this.data = false;
-		// this.category_id = category_id;
-		// this.category    = false;
-
-		this.getData();
-	};
-
-	Calendar.prototype.getData = function() {
-		this.data = $http.get('/js/json/weeklymenu.json');
-	};
-
-	Calendar.prototype.fetch = function(){
-
-		var self = this;
-		var result = { 'week': [] };
-
-		return this.data.then(function(response) {
-
-	        angular.forEach( response.data.items, function(value, key){
-	    
-	        	result.week.push( [ value.weekDay.toUpperCase(), value.title ] );
-	        	
-
-	        });
-	        // console.log(result);
-	        angular.extend(self, result);
-	        return response;
-
-    	});
-	}
-
-	return Calendar;
-
-})
-
-.service('groceryCategory', ['$http', function( $http ){
-
-   
-
-    return {
-            get: function() {
-                
-                return $http.get('/js/json/grocery.json');
-            },
-
-            getCategory: function(callback) {
-                
-
-
-                $http.get('/js/json/grocery.json').then(function(response) {
-                    
-                    angular.forEach( response.data, function(value, key){
-
-                        if( value.category_id == "3" ){
-
-                            callback(value);
-                            
-                        }
-
-                    });
-                    
-
-                });
-                
-
-            },
-
-            getCategories: function(callback){
-                
-                var array = [];
-                
-                $http.get('/js/json/grocery.json').then(function(response) {
-                    
-                    angular.forEach( response.data, function(value, key){
-
-                        array.push({
-                            "category_id" : value.category_id,
-                            "name"        : value.name
-                        });
-
-
-                    });
-                    callback(array);
-
-                });
-            }
-
-    }
-
-}])
 
 
 

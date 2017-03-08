@@ -67,28 +67,15 @@ angular.module('starter.controllers', ['app.services'])
   var WM = new WeeklyMenu();
 
   WM.getItemsForWeeklyMenuPage().then(function(){
+
     
-    console.log(WM.meta);
-    console.log(WM.items);
+    $scope.meta  = WM.meta;
+    $scope.items = WM.items;
+    // console.log(items)
+    
 
   });
-  // WM.fetch().then(function(){
 
-     // 
-    
-  // });
-  
-  // WM.fetch().then(function(){
-
-  //   WM.getItemsForWeeklyMenuPage();
-  // //   // $scope.week = WM.week;
-    
-  // });
-
-  // weeklyMenuAlterFactory.get().then(function(response){
-
-  //     $scope.data = response.data;
-  // })
 
 
 

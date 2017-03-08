@@ -33,18 +33,18 @@ angular.module('app.services', [])
 	// work only like inner method (don't use it now like promise with then()...)
 	WeeklyMenu.prototype.fetch = function(){
 
-		var array = { meta:[] };
-		var self       = this;
+		var array = [];
+		var self  = this;
 
 		this.data.then(function(response){
 			
-         	array.meta.push([
+         	array.push([
         		response.data.meta.id,
         		response.data.meta.title,
         		response.data.meta.description
     		]);
 
-			angular.extend(self, array);
+			angular.extend(self, { 'meta': array });
 
 			return response;
 
@@ -53,9 +53,9 @@ angular.module('app.services', [])
 
 	WeeklyMenu.prototype.getItemsForWeeklyMenuPage = function(){
 
-		// var array.items = [];
-		var array = { items:[] };
-		var self        = this;
+		var array = [];
+		// var array = { items:[] };
+		var self  = this;
 
 		return this.data.then(function(response){
 			// console.log(response);
@@ -75,18 +75,18 @@ angular.module('app.services', [])
 
 	        	// ];	
 
-        		array.items.push( [ 
-        			value.id, 
-        			value.weekDay.toUpperCase(), 
-        			value.title,
-        			value.img,
-        			value.recipeDescription 
-    			] );
+        		array.push( { 
+        			"id"     : value.id, 
+        			"weekDay": value.weekDay.toUpperCase(), 
+        			"title"  : value.title,
+        			"img"    : value.img,
+        			"recipeDescription": value.recipeDescription 
+    			} );
 
 			});
 
-			// console.log( array );
-			angular.extend(self, array);
+			console.log( array );
+			angular.extend(self, { 'items': array });
 
 
 			return response;

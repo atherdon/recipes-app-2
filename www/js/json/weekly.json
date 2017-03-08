@@ -15,7 +15,6 @@
             "id"      : "1",
             "weekDay" : "monday",
             "recipes" : [{
-                
                 "id": "1", 
                 "name": "Crock Pot Roast",
                 "img": "http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg",

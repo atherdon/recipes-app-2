@@ -38,6 +38,8 @@ angular.module('app.services', [])
 
 		this.data.then(function(response){
 			
+
+
          	array.push([
         		response.data.meta.id,
         		response.data.meta.title,
@@ -54,26 +56,21 @@ angular.module('app.services', [])
 	WeeklyMenu.prototype.getItemsForWeeklyMenuPage = function(){
 
 		var array = [];
-		// var array = { items:[] };
+		
 		var self  = this;
 
 		return this.data.then(function(response){
-			// console.log(response);
+			
 
 			angular.forEach( response.data.items, function(value, key){
 
             	
 	 //        	//get only first weekly menu object
 	 // @TODO check if we got empty values
-	        	// console.log( value.weekDay );
-	        	// console.log( value.title );
-	        	// console.log( value.id );
-	        	// console.log( value.img );
-	        	// console.log( value.recipeDescription );
+	        	console.log(value.id);
+	        	// console.log(value.recipes);
 
-	        	// var b = [	        	
 
-	        	// ];	
 
         		array.push( { 
         			"id"     : value.id, 
@@ -85,7 +82,7 @@ angular.module('app.services', [])
 
 			});
 
-			console.log( array );
+			// console.log( array );
 			angular.extend(self, { 'items': array });
 
 
@@ -95,57 +92,19 @@ angular.module('app.services', [])
 
 	};
 
-		
+	//get recipes by weekday id that was passed from weekly menu template
+	WeeklyMenu.prototype.getRecipesById = function( id ){
 
-		// angular.forEach( this.data.items, function(value, key){
 
 
+	};	
+ 
 	        	 
 	        	 
 	        	 
 	        	 
-	        	 
-
-	 //        
-	        	
-	 //        //     	// angular.extend(self, value);	
-	 //        //     	// self.category = value;
-	 //        //     	// console.log( value );
-
-	 //            	// return response;
-	        
-	                
-  //       }
-
-  //   };
-
-	// 	this.data.then(function(response){
-	// 		console.log(response);
-
-	//         angular.forEach( response.data, function(value, key){
 
 
-	//         	//get only first weekly menu object
-	//         	self.weeklyData = value;	
-	//         //     // if( value.category_id == self.category_id ){
-
-
-	//         //     	// angular.extend(self, value);	
-	//         //     	// self.category = value;
- //            	console.log( value );
-
- //            	return response;
-	        
-	                
-	//         //     // }
-
-	//         });
-
-
-	// 	})
-
-		
-	// };
 
 
 

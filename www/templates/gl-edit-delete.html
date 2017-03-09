@@ -1,0 +1,14 @@
+<ion-header-bar class="bar-positive">
+		<h1 class="title">Grocery List</h1>
+		<div class="buttons">
+			<button class="button" ng-click="onShare()">Share</button>
+		</div>
+</ion-header-bar>
+<ion-content>
+	<ion-list show-delete="true">
+		<ion-item ng-repeat="grocery in groceries" item="grocery">
+			<ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(grocery)"></ion-delete-button>
+			{{ grocery }}
+		</ion-item>
+	</ion-list>
+</ion-content>

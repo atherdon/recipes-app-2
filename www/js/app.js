@@ -81,6 +81,17 @@ $stateProvider
       }
     })
 
+.state('app.gleditdelete', {
+      url: '/gleditdelete',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/gl-edit-delete.html',
+          controller: 'groceryListEditDeleteCtrl'
+        }
+      }
+    })
+
+
 
 // .state('app.previousweek', {
 //       url: '/weeklymenu/:id',
@@ -162,6 +173,6 @@ $stateProvider
 
   ;
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/weeklymenu');
+  $urlRouterProvider.otherwise('/app/gleditdelete');
   // $urlRouterProvider.otherwise('/app/playlists');
 });

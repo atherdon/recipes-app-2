@@ -81,6 +81,40 @@ angular.module('starter.controllers', ['app.services'])
 
 })
 
+.controller('groceryListEditDeleteCtrl', function($scope, $stateParams ){
+
+  $scope.groceries = [
+        "Bananas", "Apples", "Oranges", "Milk", "Eggs", "Bread",
+        "Cereal", "Beef", "Napkins", "Cheese", "Peanut Butter"
+  ];
+
+  $scope.removeGrocery = function( grocery ) {
+    $scope.groceries.splice(
+      $scope.groceries.indexOf( grocery ), 1 );
+  };
+
+  $scope.onItemDelete = function( grocery ) {
+    var message = "Are you sure you want to delete " + grocery + "?";
+    navigator.notification.confirm( message, function( index ) {
+      if ( index === 1 ) {
+        $scope.removeGrocery( grocery );
+        $scope.$apply();
+      }
+    });
+  };
+
+  //@TODO add socialsharing plugin. not working right now
+  $scope.onShare = function() {
+
+    console.log('click');
+    // window.plugins.socialsharing.share(
+    //   $scope.groceries.join( ", " ) 
+    // );
+
+  };
+
+})
+
 // .controller('weeklyMenuPrevCtrl', function($scope, $stateParams, weeklyMenuAlterFactory) {
 
 //   // console.log('123');

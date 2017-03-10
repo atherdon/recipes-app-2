@@ -173,6 +173,7 @@ $stateProvider
 
   ;
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/gleditdelete');
+  $urlRouterProvider.otherwise('/app/weeklymenu');
+  // $urlRouterProvider.otherwise('/app/gleditdelete');
   // $urlRouterProvider.otherwise('/app/playlists');
 });

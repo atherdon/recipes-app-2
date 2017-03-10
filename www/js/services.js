@@ -67,7 +67,7 @@ angular.module('app.services', [])
             	
 	 //        	//get only first weekly menu object
 	 // @TODO check if we got empty values
-	        	console.log(value.id);
+	        	// console.log(value.id);
 	        	// console.log(value.recipes);
 
 
@@ -92,10 +92,48 @@ angular.module('app.services', [])
 
 	};
 
+	// Move to another service, because it's stupid to get recipe at weekly menu,
+	// we need only few fields.
+
 	//get recipes by weekday id that was passed from weekly menu template
 	WeeklyMenu.prototype.getRecipesById = function( id ){
 
+		var self  = this;
 
+		var entity = { 
+						directions: {},
+						ingredients: {},
+						img: "",
+						title: "",
+						description:"" 
+						// prep/cook time / notes / nutrition
+					}
+
+		return 
+		this.data.then(function(response){
+
+			 console.log( response );
+
+			angular.forEach( response.data.items, function(value, key){
+
+            	
+	 //        	// console.log(value.id);
+	        	// console.log(value.recipes);
+
+
+
+  //      //  		array.push( { 
+  //      //  			"id"     : value.id, 
+  //      //  			"weekDay": value.weekDay.toUpperCase(), 
+  //      //  			"title"  : value.title,
+  //      //  			"img"    : value.img,
+  //      //  			"recipeDescription": value.recipeDescription 
+  //   			// } );
+
+			});
+
+			return response;
+		});
 
 	};	
  

@@ -1,12 +1,12 @@
 <ion-view view-title="Weekly Menu" id="weeklyMenu">
     <ion-content padding="true" class="has-header">
         <h2 id="weeklyMenu-heading1" 
-            style="color:#000000;text-align:center;"> <!-- @TODO move styles -->
+            class="heading1 "> 
 
             {{data.meta.title}}
         </h2>
         <div id="weeklyMenu-markdown1" 
-             style="color:#000000;text-align:center;"> <!-- @TODO move styles -->
+             class="heading1 ">
             <p>
               {{data.meta.description}}             
             </p>
@@ -19,13 +19,13 @@
             href="#/app/recipe/{{ item.id }}">
                 
                 <img src="{{ item.img }}" alt="{{ item.title }}">
-                <h2 style="white-space:normal;"> <!-- @TODO move styles -->
+                <h2 class="white-space">
                       {{ item.title }}                      
                 </h2>
-                <p style="white-space:normal;"> <!-- @TODO move styles -->
+                <p class="white-space"> 
                     {{ item.weekDay }}                     
                 </p>
-                <h5 style="white-space:normal;"> <!-- @TODO move styles -->
+                <h5 class="white-space">
                     {{ item.recipeDescription }}                     
                 </h5>
                 
@@ -35,7 +35,8 @@
         </ion-list>
         
         
-        <button id="weeklyMenu-button1" class="button button-positive button-block"
+        <button id="weeklyMenu-button1" 
+        class="button button-positive button-block"
         href="#/app/weeklymenu/{{item.id}}"> <!-- @TODO change later -->
             Previous week
         </button>

@@ -12,9 +12,8 @@
       <div class="item item-body" id="groceryListSettings-list-item-container">
 
         <div id="groceryListSettings-markdown20" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;"> <!-- @TODO move styles -->
-            <strong>
-            <!-- Pork Tenderloin with Roasted Cherries -->
+          <p class="p-fix">
+            <strong>            
             {{ value.title }}
             </strong>
           </p>
@@ -32,7 +31,8 @@
               <option>4</option>
             </select>
           </label>
-          <ion-toggle toggle-class="toggle-positive" id="groceryListSettings-toggle2" data-id="{{value.id}}">
+          <ion-toggle toggle-class="toggle-positive" 
+          id="groceryListSettings-toggle2" data-id="{{value.id}}">
           Disable
           </ion-toggle>
           <input type="hidden" value="{{value.id}}" />

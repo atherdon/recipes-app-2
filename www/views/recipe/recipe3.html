@@ -1,17 +1,18 @@
 <ion-view title="UX Single recipe 2" id="page18">
   <ion-content padding="true" class="has-header">
-    <h3 id="uXSingleRecipe2-heading11" style="color:#000000;text-align:center;">
-    Pork Tenderloin with Roasted Cherries
+    <h3 id="uXSingleRecipe2-heading11" class="heading1">
+    {{title}}
     </h3>
     <div class="list card" id="uXSingleRecipe2-card29">
       <div class=" item item-image">
-        <img src="img/wUcqWeBSYmQNfkCtaw5s_dsc_0978.display.jpg" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        <img src="{{img}}" 
+        class="recipe-image1" /> 
       </div>
 
       <div class="item item-body" id="uXSingleRecipe2-list-item-container39">
         <div id="uXSingleRecipe2-markdown42" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">
-          This sauce is, in one word, awesome! 
+          <p class="markdown-text"> 
+          {{description}} 
           </p>
         </div>
       </div>
@@ -20,15 +21,21 @@
         <i class="icon ion-android-time"></i>
         Timing
         </ion-item>
-      <ion-item class="item-icon-left royal" id="uXSingleRecipe2-list-item78" href="#/app/ingredients">
+
+      <ion-item class="item-icon-left royal" id="uXSingleRecipe2-list-item78" 
+      href="#/app/ingredients/{{id}}">
 
         <i class="icon ion-egg"></i>
         Ingredients
         </ion-item>
-      <ion-item class="item-icon-left positive" id="uXSingleRecipe2-list-item79" href="#/app/playlists/{{playlist.id}}">
+
+      <ion-item class="item-icon-left positive" 
+      id="uXSingleRecipe2-list-item79" 
+      href="#/app/directions/{{id}}">
         <i class="icon ion-ios-list-outline"></i>
         Directions
         </ion-item>
+
     </div>
   </ion-content>
 </ion-view>

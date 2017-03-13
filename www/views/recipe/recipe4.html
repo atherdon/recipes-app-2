@@ -4,23 +4,21 @@
       <div class="item item-body" id="uXSingleRecipe-list-item-container10">
 
         <div id="uXSingleRecipe-markdown12" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">
-          <!-- Pork Tenderloin with Roasted Cherries -->
-          {{}}
+          <p class="markdown-text">
+          {{title}}
           </p>
         </div>
       </div>
 
       <div class=" item item-image">
-        <img src="img/wUcqWeBSYmQNfkCtaw5s_dsc_0978.display.jpg" 
-        style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        <img src="{{img}}" 
+        class="recipe-image1" />
       </div>
 
       <div class="item item-body" id="uXSingleRecipe-list-item-container11">
         <div id="uXSingleRecipe-markdown13" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">
-          <!-- This sauce is, in one word, awesome!  -->
-          {{}}
+          <p class="markdown-text">
+          {{description}} 
           </p>
         </div>
       </div>
@@ -31,14 +29,14 @@
         </ion-item>
 
       <ion-item class="item-icon-left royal" id="uXSingleRecipe-list-item52" 
-      href="#/app/ingredients/{{}}"
+      href="#/app/ingredients/{{id}}"
       >
         <i class="icon ion-egg"></i>
         Ingredients
         </ion-item>
 
       <ion-item class="item-icon-left positive" id="uXSingleRecipe-list-item53" 
-      href="#/app/directions/{{}}">
+      href="#/app/directions/{{id}}">
         <i class="icon ion-ios-list-outline"></i>
         Directions
         </ion-item>

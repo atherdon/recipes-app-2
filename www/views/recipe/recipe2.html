@@ -1,11 +1,13 @@
 <ion-view title="Styled Single recipe" id="page9">
   <ion-content padding="true" class="has-header">
     <div class="list card" id="styledSingleRecipe-card22">
-      <ion-item id="styledSingleRecipe-list-item21">Pork Tenderloin with Roasted Cherries</ion-item>
+      <ion-item id="styledSingleRecipe-list-item21">
+        {{title}}
+      </ion-item>
       <div class=" item item-image">
-        <img src="img/XvvNp3UISQCR3liY77yj_dsc_0978.display.jpg" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+        <img src="{{img}}"
+        class="recipe-image1" /> 
       </div>
-
       <form id="styledSingleRecipe-form4" class="list">
         <label class="item item-select" id="styledSingleRecipe-select2">
           <span class="input-label">Servings</span>
@@ -18,12 +20,10 @@
           </select>
         </label>
       </form>
-      
       <div class="item item-body" id="styledSingleRecipe-list-item-container2">
         <div id="styledSingleRecipe-markdown10" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">
-          Some friendly
-            <strong>markdown</strong>
+          <p class="markdown-text">
+            {{description}} 
           </p>
         </div>
       </div>
@@ -31,73 +31,63 @@
         <i class="icon ion-android-time"></i>Timing</ion-item>
       <ion-item id="styledSingleRecipe-list-item30">
       Preparation Time 15m
+
       </ion-item>
       <ion-item id="styledSingleRecipe-list-item31">
       Cook Time 35m
+
       </ion-item>
       <ion-item class="item-divider" id="styledSingleRecipe-list-item-divider1"> </ion-item>
-      <ion-item class="item-icon-left royal" id="styledSingleRecipe-list-item23" 
-      ui-sref="ingredients">
+
+      <ion-item class="item-icon-left royal" 
+      id="styledSingleRecipe-list-item23" 
+      >
         <i class="icon ion-egg"></i>
         Ingredients
         </ion-item>
 
-        <ul ng-repeat="ingredient in recipe.ingredients">
-                    
-            <li>                    
-                
-            </li>
-            
-
-        </ul>
+     
                 
 
-      <ion-list id="styledSingleRecipe-list" ng-repeat="ingredient in recipe.ingredients">
+      <ion-list id="styledSingleRecipe-list" 
+      ng-repeat="(key, value) in recipe.ingredients">
         <ion-item id="styledSingleRecipe-list-item24">
-          {{ ingredient.quantity }}
-          {{ ingredient.name }} - 
-          {{ ingredient.type }}
+          {{ value.quantity }}
+              {{ value.name }} - 
+              {{ value.type }}
         </ion-item>
 
+        
+        <!-- 1.5 teaspoons kosher salt divided -->
+         
 
       </ion-list>          
 
 
 
+
+      
       <ion-item class="item-divider" id="styledSingleRecipe-list-item-divider2"> </ion-item>
 
 
 
 
-      <ion-item class="item-icon-left" id="styledSingleRecipe-list-item32" ui-sref="directions">
+      <ion-item class="item-icon-left" id="styledSingleRecipe-list-item32">
         <i class="icon ion-ios-list-outline"></i>
         Directions
         </ion-item>
 
-
-      <ion-list id="styledSingleRecipe-list8">
+        <ion-list id="styledSingleRecipe-list" 
+      ng-repeat="(key, value) in recipe.directions">
         <ion-item id="styledSingleRecipe-list-item33">
-        1 Preheat oven to 425 degrees.
+          {{ key }}                
+              {{ value }}
         </ion-item>
-        <!-- <ion-item id="styledSingleRecipe-list-item34">
-        2 Heat a large ovenproof nonstick skillet over medium-high heat. Add 1 tablespoon oil; swirl to coat.
-        </ion-item> -->
-       <!--  <ion-item id="styledSingleRecipe-list-item35">
-        3 Combine 1 teaspoon salt, pepper, cumin, cinnamon and ginger. Rub pork evenly with this spice mixture.
-        </ion-item>
-        <ion-item id="styledSingleRecipe-list-item40">
-        4 Add pork to now-hot skillet; saute 4 minutes.
-        </ion-item>
-        <ion-item id="styledSingleRecipe-list-item39">
-        5 Turn pork over; place pan in oven and roast for 15 minutes, or until an instant-read thermometer registers 140 degrees.
-        </ion-item>
-        <ion-item id="styledSingleRecipe-list-item38">
-        6 Remove pork from pan; place on a cutting board or plate and tent loosely with foil. Do not wipe out pan.
-        </ion-item>
-        <ion-item id="styledSingleRecipe-list-item37">
-        7 While pork is resting, add remaining 1 tablespoon oil to pan; swirl to coat.
-        </ion-item> -->
-      </ion-list>
+
+
+
+      </ion-list>  
+
     </div>
   </ion-content>
 </ion-view>

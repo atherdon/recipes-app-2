@@ -1,39 +1,54 @@
 <ion-view title="Single Recipe" id="page5">
   <ion-content padding="true" class="has-header">
     <div>
-      <img src="img/gYHPhcY7TvqHuy8b2Tv1_dsc_0978.display.jpg" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+      <img src="{{img}}" 
+
+           class="recipe-image1" />
+           <!-- src="img/gYHPhcY7TvqHuy8b2Tv1_dsc_0978.display.jpg"  -->
+      
     </div>
-    <h3 id="singleRecipe-heading2" style="color:#000000;">
-    Pork Tenderloin with Roasted Cherries
+    <h3 id="singleRecipe-heading2" class="black">
+      
+      {{title}}
     </h3>
     <div id="singleRecipe-markdown2" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">
-      This sauce is, in one word, awesome! 
+      <p class="black">
+        {{description}} 
       </p>
     </div>
 
-    <h4 id="singleRecipe-heading3" style="color:#000000;">
-    Ingredients
+    <h4 id="singleRecipe-heading3" class="black"> 
+      Ingredients
     </h4>
+    
     <div id="singleRecipe-markdown4" class="show-list-numbers-and-dots">
 
-      <ul ng-repeat="ingredient in recipe.ingredients">
+      <ul ng-repeat="(key, value) in recipe.ingredients">
                     
           <li>                    
-              {{ ingredient.quantity }}
-              {{ ingredient.name }} - 
-              {{ ingredient.type }}
+              {{ value.quantity }}
+              {{ value.name }} - 
+              {{ value.type }}
           </li>
           
 
       </ul>
                 
 
-    <h4 id="singleRecipe-heading" style="color:#000000;">
+    <h4 id="singleRecipe-heading" class="black">
       Directions
     </h4>
 
-    
+    <ul ng-repeat="(key, value) in recipe.directions">
+                    
+          <li>
+              {{ key }}                
+              {{ value }}
+              
+          </li>
+          
+
+      </ul>
 
      
 

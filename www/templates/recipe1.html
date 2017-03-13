@@ -23,12 +23,12 @@
     
     <div id="singleRecipe-markdown4" class="show-list-numbers-and-dots">
 
-      <ul ng-repeat="ingredient in recipe.ingredients">
+      <ul ng-repeat="(key, value) in recipe.ingredients">
                     
           <li>                    
-              {{ ingredient.quantity }}
-              {{ ingredient.name }} - 
-              {{ ingredient.type }}
+              {{ value.quantity }}
+              {{ value.name }} - 
+              {{ value.type }}
           </li>
           
 
@@ -39,16 +39,16 @@
       Directions
     </h4>
 
-    <!-- <ul ng-repeat="ingredient in recipe.ingredients">
+    <ul ng-repeat="(key, value) in recipe.directions">
                     
-          <li>                    
-              {{ ingredient.quantity }}
-              {{ ingredient.name }} - 
-              {{ ingredient.type }}
+          <li>
+              {{ key }}                
+              {{ value }}
+              
           </li>
           
 
-      </ul> -->
+      </ul>
 
      
 

@@ -46,56 +46,25 @@
         Ingredients
         </ion-item>
 
-       <!--  <ul ng-repeat="ingredient in recipe.ingredients">
-                    
-            <li>                    
-                
-            </li>
-            
-
-        </ul> -->
+     
                 
 
       <ion-list id="styledSingleRecipe-list" 
-      ng-repeat="ingredient in recipe.ingredients">
+      ng-repeat="(key, value) in recipe.ingredients">
         <ion-item id="styledSingleRecipe-list-item24">
-          {{ ingredient.quantity }}
-          {{ ingredient.name }} - 
-          {{ ingredient.type }}
+          {{ value.quantity }}
+              {{ value.name }} - 
+              {{ value.type }}
         </ion-item>
 
-        <!-- <ion-item id="styledSingleRecipe-list-item25">
-        1.5 teaspoons kosher salt divided
-        </ion-item>
-        <ion-item id="styledSingleRecipe-list-item26">
-        0.25 teaspoon freshly ground black pepper
-        </ion-item> -->
+        
+        <!-- 1.5 teaspoons kosher salt divided -->
+         
 
       </ion-list>          
 
 
 
-
-   <!--    <ion-list id="styledSingleRecipe-list7">
-        <ion-item id="styledSingleRecipe-list-item24">
-        2 tablespoons olive oil divided
-        </ion-item>
-        <ion-item id="styledSingleRecipe-list-item25">
-        1.5 teaspoons kosher salt divided
-        </ion-item>
-        <ion-item id="styledSingleRecipe-list-item26">
-        0.25 teaspoon freshly ground black pepper
-        </ion-item>
-      </ion-list> -->
-      <!-- <ion-item id="styledSingleRecipe-list-item27">
-      1 teaspoon ground cumin
-      </ion-item>
-      <ion-item id="styledSingleRecipe-list-item28">
-      0.25 teaspoon ground cinnamon
-      </ion-item>
-      <ion-item id="styledSingleRecipe-list-item29">
-      1.25 pounds pork tenderloin excess fat and silver skin removed
-      </ion-item> -->
 
       
       <ion-item class="item-divider" id="styledSingleRecipe-list-item-divider2"> </ion-item>
@@ -109,54 +78,16 @@
         </ion-item>
 
         <ion-list id="styledSingleRecipe-list" 
-      ng-repeat="ingredient in recipe.ingredients">
-        <ion-item id="styledSingleRecipe-list-item24">
-          {{ ingredient.quantity }}
-          {{ ingredient.name }} - 
-          {{ ingredient.type }}
+      ng-repeat="(key, value) in recipe.directions">
+        <ion-item id="styledSingleRecipe-list-item33">
+          {{ key }}                
+              {{ value }}
         </ion-item>
 
-        <!-- <ion-item id="styledSingleRecipe-list-item25">
-        1.5 teaspoons kosher salt divided
-        </ion-item>
-        <ion-item id="styledSingleRecipe-list-item26">
-        0.25 teaspoon freshly ground black pepper
-        </ion-item> -->
+
 
       </ion-list>  
 
-
-      <ion-list id="styledSingleRecipe-list8">
-
-        <!-- <ion-item id="styledSingleRecipe-list-item33">
-        1 Preheat oven to 425 degrees.
-        </ion-item>
-
-        <ion-item id="styledSingleRecipe-list-item34">
-        2 Heat a large ovenproof nonstick skillet over medium-high heat. Add 1 tablespoon oil; swirl to coat.
-        </ion-item>
-
-        <ion-item id="styledSingleRecipe-list-item35">
-        3 Combine 1 teaspoon salt, pepper, cumin, cinnamon and ginger. Rub pork evenly with this spice mixture. -->
-        <!-- </ion-item>
-
-        <ion-item id="styledSingleRecipe-list-item40">
-        4 Add pork to now-hot skillet; saute 4 minutes.
-        </ion-item>
-
-        <ion-item id="styledSingleRecipe-list-item39">
-        5 Turn pork over; place pan in oven and roast for 15 minutes, or until an instant-read thermometer registers 140 degrees.
-        </ion-item>
-
-        <ion-item id="styledSingleRecipe-list-item38">
-        6 Remove pork from pan; place on a cutting board or plate and tent loosely with foil. Do not wipe out pan.
-        </ion-item>
-
-        <ion-item id="styledSingleRecipe-list-item37">
-        7 While pork is resting, add remaining 1 tablespoon oil to pan; swirl to coat.
-        </ion-item> -->
-        
-      </ion-list>
     </div>
   </ion-content>
 </ion-view>

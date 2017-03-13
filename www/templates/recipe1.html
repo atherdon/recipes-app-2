@@ -1,22 +1,26 @@
 <ion-view title="Single Recipe" id="page5">
   <ion-content padding="true" class="has-header">
     <div>
-      <img src="img/gYHPhcY7TvqHuy8b2Tv1_dsc_0978.display.jpg" 
+      <img src="{{img}}" 
+
            class="recipe-image1" />
+           <!-- src="img/gYHPhcY7TvqHuy8b2Tv1_dsc_0978.display.jpg"  -->
       
     </div>
     <h3 id="singleRecipe-heading2" class="black">
-      Pork Tenderloin with Roasted Cherries
+      
+      {{title}}
     </h3>
     <div id="singleRecipe-markdown2" class="show-list-numbers-and-dots">
       <p class="black">
-        This sauce is, in one word, awesome! 
+        {{description}} 
       </p>
     </div>
 
     <h4 id="singleRecipe-heading3" class="black"> 
       Ingredients
     </h4>
+    
     <div id="singleRecipe-markdown4" class="show-list-numbers-and-dots">
 
       <ul ng-repeat="ingredient in recipe.ingredients">
@@ -35,7 +39,16 @@
       Directions
     </h4>
 
-    
+    <!-- <ul ng-repeat="ingredient in recipe.ingredients">
+                    
+          <li>                    
+              {{ ingredient.quantity }}
+              {{ ingredient.name }} - 
+              {{ ingredient.type }}
+          </li>
+          
+
+      </ul> -->
 
      
 

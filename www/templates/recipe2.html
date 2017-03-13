@@ -2,10 +2,10 @@
   <ion-content padding="true" class="has-header">
     <div class="list card" id="styledSingleRecipe-card22">
       <ion-item id="styledSingleRecipe-list-item21">
-        Pork Tenderloin with Roasted Cherries
+        {{title}}
       </ion-item>
       <div class=" item item-image">
-        <img src="img/XvvNp3UISQCR3liY77yj_dsc_0978.display.jpg"
+        <img src="{{img}}"
         class="recipe-image1" /> 
       </div>
       <form id="styledSingleRecipe-form4" class="list">
@@ -23,8 +23,7 @@
       <div class="item item-body" id="styledSingleRecipe-list-item-container2">
         <div id="styledSingleRecipe-markdown10" class="show-list-numbers-and-dots">
           <p class="markdown-text">
-          Some friendly
-            <strong>markdown</strong>
+            {{description}} 
           </p>
         </div>
       </div>
@@ -32,28 +31,33 @@
         <i class="icon ion-android-time"></i>Timing</ion-item>
       <ion-item id="styledSingleRecipe-list-item30">
       Preparation Time 15m
+
       </ion-item>
       <ion-item id="styledSingleRecipe-list-item31">
       Cook Time 35m
+
       </ion-item>
       <ion-item class="item-divider" id="styledSingleRecipe-list-item-divider1"> </ion-item>
-      <ion-item class="item-icon-left royal" id="styledSingleRecipe-list-item23" 
-      ui-sref="ingredients">
+
+      <ion-item class="item-icon-left royal" 
+      id="styledSingleRecipe-list-item23" 
+      >
         <i class="icon ion-egg"></i>
         Ingredients
         </ion-item>
 
-        <ul ng-repeat="ingredient in recipe.ingredients">
+       <!--  <ul ng-repeat="ingredient in recipe.ingredients">
                     
             <li>                    
                 
             </li>
             
 
-        </ul>
+        </ul> -->
                 
 
-      <ion-list id="styledSingleRecipe-list" ng-repeat="ingredient in recipe.ingredients">
+      <ion-list id="styledSingleRecipe-list" 
+      ng-repeat="ingredient in recipe.ingredients">
         <ion-item id="styledSingleRecipe-list-item24">
           {{ ingredient.quantity }}
           {{ ingredient.name }} - 
@@ -99,15 +103,32 @@
 
 
 
-      <ion-item class="item-icon-left" id="styledSingleRecipe-list-item32" ui-sref="directions">
+      <ion-item class="item-icon-left" id="styledSingleRecipe-list-item32">
         <i class="icon ion-ios-list-outline"></i>
         Directions
         </ion-item>
 
+        <ion-list id="styledSingleRecipe-list" 
+      ng-repeat="ingredient in recipe.ingredients">
+        <ion-item id="styledSingleRecipe-list-item24">
+          {{ ingredient.quantity }}
+          {{ ingredient.name }} - 
+          {{ ingredient.type }}
+        </ion-item>
+
+        <!-- <ion-item id="styledSingleRecipe-list-item25">
+        1.5 teaspoons kosher salt divided
+        </ion-item>
+        <ion-item id="styledSingleRecipe-list-item26">
+        0.25 teaspoon freshly ground black pepper
+        </ion-item> -->
+
+      </ion-list>  
+
 
       <ion-list id="styledSingleRecipe-list8">
 
-        <ion-item id="styledSingleRecipe-list-item33">
+        <!-- <ion-item id="styledSingleRecipe-list-item33">
         1 Preheat oven to 425 degrees.
         </ion-item>
 
@@ -116,8 +137,8 @@
         </ion-item>
 
         <ion-item id="styledSingleRecipe-list-item35">
-        3 Combine 1 teaspoon salt, pepper, cumin, cinnamon and ginger. Rub pork evenly with this spice mixture.
-        </ion-item>
+        3 Combine 1 teaspoon salt, pepper, cumin, cinnamon and ginger. Rub pork evenly with this spice mixture. -->
+        <!-- </ion-item>
 
         <ion-item id="styledSingleRecipe-list-item40">
         4 Add pork to now-hot skillet; saute 4 minutes.
@@ -133,7 +154,7 @@
 
         <ion-item id="styledSingleRecipe-list-item37">
         7 While pork is resting, add remaining 1 tablespoon oil to pan; swirl to coat.
-        </ion-item>
+        </ion-item> -->
         
       </ion-list>
     </div>

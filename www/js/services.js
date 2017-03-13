@@ -1,13 +1,5 @@
 angular.module('app.services', [])
 
-.factory('BlankFactory', [function(){
-
-}])
-
-.service('BlankService', [function(){
-
-}])
-
 .factory('freeRecipes', function( $http ){
 
 	var FreeRecipes = function(){
@@ -150,6 +142,9 @@ angular.module('app.services', [])
 
 	Recipe.prototype.getData() = function(){
 		this.data = $http.get('/js/api/json/recipe.json');
+		// this.data = $http.get('/js/api/json/recipe2.json');
+		// this.data = $http.get('/js/api/json/recipe3.json');
+		// this.data = $http.get('/js/api/json/recipe4.json');
 	}
 
 	Recipe.prototype.fetch() = function(){
@@ -213,7 +208,7 @@ angular.module('app.services', [])
 
 	        // });
 	        // console.log(result);
-	        angular.extend(self, { 'list': response.data.steps });
+	        angular.extend(self, { 'list': response.data.directions });
 	        return response;
 
     	});

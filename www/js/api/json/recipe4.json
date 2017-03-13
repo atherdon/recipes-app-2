@@ -53,7 +53,7 @@
             }
         },
     ],
-    "steps": [
+    "directions": [
 
         {
             "step"  : "Cut the apple into cubes",

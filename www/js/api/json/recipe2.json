@@ -33,7 +33,7 @@
             }
         },
     ],
-    "steps": [
+    "directions": [
         "Cut the apple into cubes",
         "Cut the banana into slices",
         "Peel the orange, and divide into segments",

@@ -5,18 +5,18 @@
         
         <ion-list id="groceryList-list12" >
 
-            <ion-item class="item-icon-left assertive" 
-                      id="groceryList-list-item54" 
-                      href="#/app/calendar"
-                      ui-sref="tabsController.recipesCalendar">
-                <i class="icon ion-ios-calendar-outline"></i>
+            <ion-item class ="item-icon-left assertive" 
+                      id ="groceryList-list-item54" 
+                      href ="#/app/calendar"
+                      ui-sref ="tabsController.recipesCalendar">
+                <i class ="icon ion-ios-calendar-outline"></i>
                 Recipes Calendar
             </ion-item>
             
-            <ion-item ng-repeat="category in categories"
-                      class="item-icon-left" 
-                      id="groceryList-list-item{{ category.category_id }}"
-                      href="#/app/grocerylistitem/{{category.id}}" >
+            <ion-item ng-repeat = "category in categories"
+                      class     = "item-icon-left" 
+                      id        = "groceryList-list-item{{ category.category_id }}"
+                      href      = "#/app/grocerylistitem/{{category.id}}" >
                 <!--<i class="icon ion-ios-arrow-down"></i>-->
                 <i class="icon ion-ios-arrow-right"></i>
                 {{ category.name }}

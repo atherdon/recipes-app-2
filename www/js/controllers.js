@@ -41,20 +41,6 @@ angular.module('starter.controllers', ['app.services'])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-})
-
 
 
 /* recipes stuff */
@@ -97,9 +83,11 @@ angular.module('starter.controllers', ['app.services'])
 
 
 .controller('loginCtrl', function($scope, $stateParams) {
+
 })
 
 .controller('signupCtrl', function($scope, $stateParams) {
+
 })
 
 .controller('freeRecipesCtrl', function($scope, $stateParams, freeRecipes) {
@@ -144,9 +132,10 @@ angular.module('starter.controllers', ['app.services'])
 
 })
 
-.controller('singleRecipeCtrl', function($scope, $stateParams) {
 
-  var recipe = new Grocery( $stateParams.recipeId );
+.controller('singleRecipeCtrl', function($scope, $stateParams, Recipe) {
+
+  var recipe = new Recipe( $stateParams.recipeId );
 
   recipe.fetch().then(function(){
 
@@ -162,25 +151,28 @@ angular.module('starter.controllers', ['app.services'])
     }
 
     // console.log( recipe );
-    
-    $scope.title       = GL.name;
-    $scope.ingredients = GL.items;
+    $scope = recipe;
+    // $scope.title       = GL.name;
+    // $scope.ingredients = GL.items;
+
   });
 
 })
 
-.controller('styledSingleRecipeCtrl', function($scope, $stateParams) {
+.controller('styledSingleRecipeCtrl', function($scope, $stateParams, recipe) {
 
 })
 
-.controller('uXSingleRecipeCtrl', function($scope, $stateParams) {
+.controller('uXSingleRecipeCtrl', function($scope, $stateParams, recipe) {
 
 })
 
-.controller('uXSingleRecipe2Ctrl', function($scope, $stateParams) {
+.controller('uXSingleRecipe2Ctrl', function($scope, $stateParams, recipe) {
 
 
 })
+
+
 
 .controller('groceryListSettingsCtrl', function($scope, $stateParams, Settings) {
 

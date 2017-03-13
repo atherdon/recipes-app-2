@@ -17,7 +17,7 @@ angular.module('app.services', [])
 	};
 
 	FreeRecipes.prototype.getData = function() {
-		this.data = $http.get('/js/json/weeklymenu.json');
+		this.data = $http.get('/js/api/json/weeklymenu.json');
 	};
 
 	FreeRecipes.prototype.getCategory = function(){
@@ -71,7 +71,7 @@ angular.module('app.services', [])
     return {
             get: function(){
 
-                return $http.get('/js/json/weeklymenu.json');
+                return $http.get('/js/api/json/weeklymenu.json');
                 // return $http.get('/js/json/recipe.json');
             }
             
@@ -92,7 +92,7 @@ angular.module('app.services', [])
 
 
 	Grocery.prototype.getData = function() {
-		this.data = $http.get('/js/json/grocery.json');
+		this.data = $http.get('/js/api/json/grocery.json');
 	};
 
 
@@ -129,6 +129,67 @@ angular.module('app.services', [])
 })
 
 
+.factory('recipe', function( $http ){
+
+	var b = {
+		"id" : false, 
+		"img" : false,
+		"title" : false,
+		"weekDay" : false,
+		"description" : false,
+		"ingredients" : {}
+		"directions"  :  {}
+	}
+
+	//@TODO check if recipe have all important information if empty()
+
+	var Recipe = function( id ){
+		this.data = false;
+		this.getData(); 
+	}
+
+	Recipe.prototype.getData() = function(){
+		this.data = $http.get('/js/api/json/recipe.json');
+	}
+
+	Recipe.prototype.fetch() = function(){
+
+		var self = this;
+
+		return this.data.then(function(response) {
+
+	        // angular.forEach( response.data.items, function(value, key){
+	    
+	        // 	result.week.push( [ value.weekDay.toUpperCase(), value.title ] );
+	//         	{
+	// 	"id" : false, 
+	// 	"img" : false,
+	// 	"title" : false,
+	// 	"weekDay" : false,
+	// 	"description" : false,
+	// 	"ingredients" : {}
+	// 	"directions"  :  {}
+	// }
+
+	        // });
+	        // console.log(result);
+	        // angular.extend(self, { 'list': response.data.steps });
+	        // angular.extend(self, item );
+	        
+	        return response;
+
+    	});
+	}
+
+
+	
+
+
+	return Recipe;
+
+})
+
+
 .factory('recipeDirections', function( $http ){
 
 	var Directions = function( recipe_id ){
@@ -137,7 +198,7 @@ angular.module('app.services', [])
 	}
 
 	Directions.prototype.getData() = function(){
-		this.data = $http.get('/js/json/recipe.json');
+		this.data = $http.get('/js/api/json/recipe.json');
 	}
 
 	Directions.prototype.fetch = function(){
@@ -170,7 +231,7 @@ angular.module('app.services', [])
 	}
 
 	Ingredients.prototype.getData() = function(){
-		this.data = $http.get('/js/json/recipe.json');
+		this.data = $http.get('/js/api/json/recipe.json');
 	}
 
 	Ingredients.prototype.fetch = function(){
@@ -208,7 +269,7 @@ angular.module('app.services', [])
 	};
 
 	Calendar.prototype.getData = function() {
-		this.data = $http.get('/js/json/weeklymenu.json');
+		this.data = $http.get('/js/api/json/weeklymenu.json');
 	};
 
 	Calendar.prototype.fetch = function(){
@@ -242,7 +303,7 @@ angular.module('app.services', [])
     return {
             get: function() {
                 
-                return $http.get('/js/json/grocery.json');
+                return $http.get('/js/api/json/grocery.json');
             },
 
             getCategory: function(callback) {

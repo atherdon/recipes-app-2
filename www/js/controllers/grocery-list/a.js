@@ -1,4 +1,6 @@
-angular.module('starter.controllers', ['app.services'])
+angular.module('starter.controllers', [
+  'app.services'
+  ])
 
 
 .controller('groceryListSettingsCtrl', function($scope, $stateParams, Settings) {

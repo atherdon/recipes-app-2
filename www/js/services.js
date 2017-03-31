@@ -74,9 +74,9 @@ angular.module('app.services', [])
 
 .factory('Grocery', function($http){
 
-	var Grocery = function ( category_id ){
-		this.data        = false;
-		this.category_id = category_id;
+	var Grocery = function ( department_id ){
+		this.data          = false;
+		this.department_id = department_id;
 		// this.category    = false;
 
 		this.getData();
@@ -88,7 +88,7 @@ angular.module('app.services', [])
 	};
 
 
-	Grocery.prototype.getCategory = function(){
+	Grocery.prototype.getDepartment = function(){
 
 		// console.log( this.data );
 		var self = this;
@@ -100,7 +100,7 @@ angular.module('app.services', [])
 
 	        angular.forEach( response.data, function(value, key){
 
-	            if( value.category_id == self.category_id ){
+	            if( value.department_id == self.id ){
 
 
 	            	angular.extend(self, value);	
@@ -309,7 +309,7 @@ angular.module('app.services', [])
                     
                     angular.forEach( response.data, function(value, key){
 
-                        if( value.category_id == "3" ){
+                        if( value.id == "3" ){
 
                             callback(value);
                             
@@ -332,7 +332,7 @@ angular.module('app.services', [])
                     angular.forEach( response.data, function(value, key){
 
                         array.push({
-                            "category_id" : value.category_id,
+                            "department_id" : value.id,
                             "name"        : value.name
                         });
 

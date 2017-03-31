@@ -1,6 +1,6 @@
 [
 	{
-		"category_id" : "1",
+		"id" : "1", //department ID
 		"name"        : "BAKERY/BREAD",	
 		"items" : [
 			{
@@ -28,7 +28,7 @@
 	},
 
 	{
-		"category_id" : "2",
+		"id" : "2",
 		"name"        : "BAKING",	
 		"items" : [
 			{
@@ -55,7 +55,7 @@
 
 	},
 	{
-		"category_id" : "3",
+		"id" : "3",
 		"name"        : "PANTRY STAPLES",	
 		"items" : [
 			{

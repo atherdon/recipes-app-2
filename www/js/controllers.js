@@ -134,11 +134,11 @@ angular.module('starter.controllers', ['app.services'])
 //@TODO remove getting info and move it to services.
 //Looks awful right now. Also remove not necessary variables from constructor and method
     
-    groceryCategory.getCategories( function(data){
+    groceryCategory.getDepartments( function(data){
 
       console.log(data);
 
-      $scope.categories = data;
+      $scope.departments = data;
 
     });
 
@@ -173,7 +173,7 @@ angular.module('starter.controllers', ['app.services'])
 
   var GL = new Grocery( $stateParams.categoryId );
 
-  GL.getCategory().then(function(){
+  GL.getDepartments().then(function(){
 
     // console.log( GL );
     

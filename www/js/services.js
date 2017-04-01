@@ -12,31 +12,18 @@ angular.module('app.services', [])
 		this.data = $http.get('/js/api/json/weeklymenu.json');
 	};
 
-	FreeRecipes.prototype.getCollection = function(){
+	FreeRecipes.prototype.fetch = function(){
 
 		// console.log( this.data );
 		var self = this;
 
 		return this.data.then(function(response) {
 
-
+        
 			// console.log( response.data );
-
-	        angular.forEach( response.data, function(value, key){
-
-	            if( value.category_id == self.category_id ){
-
-
-	            	angular.extend(self, value);	
-	            	// self.category = value;
-	            	// console.log( value );
-
-	            	return response;
-	                // callback(value);
-	                
-	            }
-
-	        });
+        angular.extend(self, { 'list': response.data });
+      	return response;
+	        
 
     	});
 	};
@@ -57,19 +44,7 @@ angular.module('app.services', [])
 
 })
 
-.factory('weeklyMenuAlterFactory', ['$http', function( $http ){
 
-
-    return {
-            get: function(){
-
-                return $http.get('/js/api/json/weeklymenu.json');
-                // return $http.get('/js/json/recipe.json');
-            }
-            
-    }
-
-}])
 
 
 .factory('Grocery', function($http){

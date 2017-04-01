@@ -12,7 +12,7 @@ angular.module('app.services', [])
 		this.data = $http.get('/js/api/json/weeklymenu.json');
 	};
 
-	FreeRecipes.prototype.getCategory = function(){
+	FreeRecipes.prototype.getCollection = function(){
 
 		// console.log( this.data );
 		var self = this;
@@ -97,22 +97,9 @@ angular.module('app.services', [])
 
 
 			// console.log( response.data );
-
-	        angular.forEach( response.data, function(value, key){
-
-	            if( value.category_id == self.category_id ){
-
-
-	            	angular.extend(self, value);	
-	            	// self.category = value;
-	            	// console.log( value );
-
-	            	return response;
-	                // callback(value);
-	                
-	            }
-
-	        });
+angular.extend(self.data, response.data);
+      return response;
+	       
 
     	});
 	};

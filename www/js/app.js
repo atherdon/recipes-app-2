@@ -7,8 +7,10 @@
 angular.module('starter', [
   'ionic', 
   'starter.controllers',
-  'ionic-material', 
-  'ionMdInput'
+  // 'ionic-material', 
+  // 'ionMdInput'
+
+  'ngMaterial'
   ])
 
 .run(function($ionicPlatform) {

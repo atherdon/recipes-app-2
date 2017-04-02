@@ -497,7 +497,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /   Abstract common lookups and manipulations in case better alternatives
 	        /   arise or future cross-platform differences warrant separate handling
 	        /=============================================================================*/
-	
+
+
+	 // function to check if there is already existing class 
+ 	        // to prevent duplication, i would use classList, 
+ 	        // but it's not supported in Android 4.x without crosswalk
+ 	        function hasClass(element, className) {
+ 	            if(element.classList){
+ 	                return element.classList.contains(className);
+ 	            }
+ 	            else{
+ 	                var classes = element.className; 
+ 	                return classes.indexOf(className) !== -1;
+ 	            }
+ 	        }
+ 	        
+ 	        function addClass(element, className) {
+ 	            if(hasClass(element, className)){
+ 	                if(element.classList){
+ 	                    element.classList.add(className);
+ 	                } else {
+ 	                    element.className += ' ' + className;
+ 	                }
+ 	            }
+ 	        }
+ 	       
+ 	        function removeClass(element, className) {
+ 	            if(hasClass(element, className)){
+ 	                if(element.classList){
+ 	                    element.classList.remove(className);
+ 	                } else {
+ 	                    element.className = element.className.replace(' '+className, '');
+ 	                }
+ 	            }
+ 	        }
+
 	        function getViewportHeight() {
 	            return window.innerHeight;
 	        }

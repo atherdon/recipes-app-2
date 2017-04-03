@@ -171,7 +171,7 @@ angular.module('starter.controllers', ['app.services'])
 
   // console.log( $stateParams.categoryId );
 
-  var GL = new Grocery( $stateParams.categoryId );
+  var GL = new Grocery( $stateParams.departmentId );
 
   GL.getDepartments().then(function(){
 

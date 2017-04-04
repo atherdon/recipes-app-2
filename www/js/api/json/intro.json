@@ -1,0 +1,50 @@
+[
+    {
+    "id":"1",
+    "img"      : "groceries.png",
+    "title"    : "Shop", 
+    "subtitle" : "A detailed grocery list in your phone or tablet. Spend less time in the supermarket.",
+    },
+    {
+    "id":"2",
+    "img"      : "groceries.png",
+    "title"    : "1-Click Grocery List", 
+    "subtitle" : "Shop with purpose and lower your food budget",
+    },
+    {
+    "id":"3",
+    "img"      : "broccoli.png",
+    "title"    : "Eat Healthy", 
+    "subtitle" : "Seasonal produce and real ingredients",
+    },
+    {
+    "id":"4",
+    "img"      : "salad.png",
+    "title"    : "Eat Healthy", 
+    "subtitle" : "Seasonal produce and real ingredients",
+    },
+    {
+    "id":"5",
+    "img"      : "tomato.png",
+    "title"    : "Eat Healthy", 
+    "subtitle" : "Seasonal produce and real ingredients",
+    },
+    {
+    "id":"6",
+    "img"      : "milk.png",
+    "title"    : "Reduce Food Waste", 
+    "subtitle" : "We try to reuse ingredients and order them by perishability to make sure you get the most out of your food budget",
+    },
+    {
+    "id":"7",
+    "img"      : "fish.png",
+    "title"    : "Reduce Food Waste", 
+    "subtitle" : "We try to reuse ingredients and order them by perishability to make sure you get the most out of your food budget",
+    },
+    {
+    "id":"8",
+    "img"      : "doughnut.png",
+    "title"    : "Diet Options", 
+    "subtitle" : "Every meal has a gluten-free, paleo, or vegetarian option so you’re getting 4 meal plans for the price of 1",
+    },
+]

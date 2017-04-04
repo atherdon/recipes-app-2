@@ -134,11 +134,11 @@ angular.module('starter.controllers', ['app.services'])
 //@TODO remove getting info and move it to services.
 //Looks awful right now. Also remove not necessary variables from constructor and method
     
-    groceryCategory.getCategories( function(data){
+    groceryCategory.getDepartments( function(data){
 
       console.log(data);
 
-      $scope.categories = data;
+      $scope.departments = data;
 
     });
 
@@ -171,9 +171,9 @@ angular.module('starter.controllers', ['app.services'])
 
   // console.log( $stateParams.categoryId );
 
-  var GL = new Grocery( $stateParams.categoryId );
+  var GL = new Grocery( $stateParams.departmentId );
 
-  GL.getCategory().then(function(){
+  GL.getDepartments().then(function(){
 
     // console.log( GL );
     
@@ -183,5 +183,30 @@ angular.module('starter.controllers', ['app.services'])
 
 
 })
+
+
+.controller('introCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
+
+// ../js/api/json/intro.json
+
+    // Called to navigate to the main app
+     $scope.startApp = function() {
+       $state.go('login');
+     };
+     $scope.next = function() {
+       $ionicSlideBoxDelegate.next();
+     };
+     $scope.previous = function() {
+       $ionicSlideBoxDelegate.previous();
+     };
+
+     // Called each time the slide changes
+     $scope.slideChanged = function(index) {
+       $scope.slideIndex = index;
+     };
+
+
+
+}])
 
 ;

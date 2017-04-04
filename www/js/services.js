@@ -12,31 +12,18 @@ angular.module('app.services', [])
 		this.data = $http.get('/js/api/json/weeklymenu.json');
 	};
 
-	FreeRecipes.prototype.getCategory = function(){
+	FreeRecipes.prototype.fetch = function(){
 
 		// console.log( this.data );
 		var self = this;
 
 		return this.data.then(function(response) {
 
-
+        
 			// console.log( response.data );
-
-	        angular.forEach( response.data, function(value, key){
-
-	            if( value.category_id == self.category_id ){
-
-
-	            	angular.extend(self, value);	
-	            	// self.category = value;
-	            	// console.log( value );
-
-	            	return response;
-	                // callback(value);
-	                
-	            }
-
-	        });
+        angular.extend(self, { 'list': response.data });
+      	return response;
+	        
 
     	});
 	};
@@ -57,19 +44,7 @@ angular.module('app.services', [])
 
 })
 
-.factory('weeklyMenuAlterFactory', ['$http', function( $http ){
 
-
-    return {
-            get: function(){
-
-                return $http.get('/js/api/json/weeklymenu.json');
-                // return $http.get('/js/json/recipe.json');
-            }
-            
-    }
-
-}])
 
 
 .factory('Grocery', function($http){
@@ -97,7 +72,7 @@ angular.module('app.services', [])
 
 
 			// console.log( response.data );
-
+      // value.department_id
 	        angular.forEach( response.data, function(value, key){
 
 	            if( value.department_id == self.id ){
@@ -113,6 +88,7 @@ angular.module('app.services', [])
 	            }
 
 	        });
+
 
     	});
 	};
@@ -290,63 +266,6 @@ angular.module('app.services', [])
 	return Calendar;
 
 })
-
-.service('groceryCategory', ['$http', function( $http ){
-
-   
-
-    return {
-            get: function() {
-                
-                return $http.get('/js/api/json/grocery.json');
-            },
-
-            getCategory: function(callback) {
-                
-
-
-                $http.get('/js/json/grocery.json').then(function(response) {
-                    
-                    angular.forEach( response.data, function(value, key){
-
-                        if( value.id == "3" ){
-
-                            callback(value);
-                            
-                        }
-
-                    });
-                    
-
-                });
-                
-
-            },
-
-            getCategories: function(callback){
-                
-                var array = [];
-                
-                $http.get('/js/json/grocery.json').then(function(response) {
-                    
-                    angular.forEach( response.data, function(value, key){
-
-                        array.push({
-                            "department_id" : value.id,
-                            "name"        : value.name
-                        });
-
-
-                    });
-                    callback(array);
-
-                });
-            }
-
-    }
-
-}])
-
 
 
 ;

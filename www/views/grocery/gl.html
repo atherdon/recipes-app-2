@@ -15,11 +15,11 @@
             
             <ion-item ng-repeat = "category in categories"
                       class     = "item-icon-left" 
-                      id        = "groceryList-list-item{{ category.category_id }}"
-                      href      = "#/app/grocerylistitem/{{category.id}}" >
+                      id        = "groceryList-list-item{{ department.department_id }}"
+                      href      = "#/app/grocerylistitem/{{department.id}}" >
                 <!--<i class="icon ion-ios-arrow-down"></i>-->
                 <i class="icon ion-ios-arrow-right"></i>
-                {{ category.name }}
+                {{ department.name }}
             </ion-item>
                        
         </ion-list>

@@ -3,8 +3,8 @@ angular.module('app.services', [])
 .factory('freeRecipes', function( $http ){
 
 	var FreeRecipes = function(){
-		this.data        = false;		
 
+		this.data        = false;		
 		this.getData();
 	};
 
@@ -21,8 +21,8 @@ angular.module('app.services', [])
 
         
 			// console.log( response.data );
-        angular.extend(self, { 'list': response.data });
-      	return response;
+        	angular.extend(self, { 'list': response.data.items });
+      		return response;
 	        
 
     	});
@@ -32,69 +32,11 @@ angular.module('app.services', [])
 
 })
 
-.factory('grocerySettings', function($http){
-
-	var Settings = function(){
-
-	}
-
-	//i need recipe title and id
-
-	return Settings;
-
-})
 
 
 
 
-.factory('Grocery', function($http){
 
-	var Grocery = function ( department_id ){
-		this.data          = false;
-		this.department_id = department_id;
-		// this.category    = false;
-
-		this.getData();
-	};
-
-
-	Grocery.prototype.getData = function() {
-		this.data = $http.get('/js/api/json/grocery.json');
-	};
-
-
-	Grocery.prototype.getDepartment = function(){
-
-		// console.log( this.data );
-		var self = this;
-
-		return this.data.then(function(response) {
-
-
-			// console.log( response.data );
-      // value.department_id
-	        angular.forEach( response.data, function(value, key){
-
-	            if( value.department_id == self.id ){
-
-
-	            	angular.extend(self, value);	
-	            	// self.category = value;
-	            	// console.log( value );
-
-	            	return response;
-	                // callback(value);
-	                
-	            }
-
-	        });
-
-
-    	});
-	};
-
-	return Grocery;
-})
 
 
 .factory('recipe', function( $http ){
@@ -229,6 +171,101 @@ angular.module('app.services', [])
 
 
 
+.factory('Grocery', function($http){
+
+	var Grocery = function ( department_id ){
+		this.data          = false;
+		this.department_id = department_id;
+		// this.category    = false;
+
+		this.getData();
+	};
+
+
+	Grocery.prototype.getData = function() {
+		this.data = $http.get('/js/api/json/grocery.json');
+	};
+
+
+	Grocery.prototype.getDepartment = function(){
+
+		// console.log( this.data );
+		var self = this;
+
+		return this.data.then(function(response) {
+
+
+			// console.log( response.data );
+      // value.department_id
+	        angular.forEach( response.data, function(value, key){
+
+	            if( value.department_id == self.id ){
+
+
+	            	angular.extend(self, value);	
+	            	// self.category = value;
+	            	// console.log( value );
+
+	            	return response;
+	                // callback(value);
+	                
+	            }
+
+	        });
+
+
+    	});
+	};
+
+//we use this keys in our templates
+// {{department.title}}
+// {{department.department_id}}
+// {{department.id}}
+// {{department.ingredients}}
+		
+// {{ ing.id }}
+// {{ ing.units }} 
+// {{ ing.name }}
+
+	Grocery.prototype.fetch = function(){
+
+		var self = this;
+		return this.data.then(function(response) {
+
+
+			// We have a good structured information. 
+			// So we can remove unnecessary fields from json file
+
+			angular.extend(self, { 'list': response.data });
+			return response;
+            // callback(value);
+
+
+
+	        // angular.forEach( response.data, function(value, key){
+
+	        //     if( value.department_id == self.id ){
+
+
+	        //     	angular.extend(self, value);	
+	        //     	// self.category = value;
+	        //     	// console.log( value );
+
+	        //     	return response;
+	        //         // callback(value);
+	                
+	        //     }
+
+	        // });
+
+
+
+		});
+	}
+
+	return Grocery;
+})
+
 .factory('Calendar', function( $http ){
 
 	var Calendar = function (  ){
@@ -264,6 +301,19 @@ angular.module('app.services', [])
 	}
 
 	return Calendar;
+
+})
+
+
+.factory('grocerySettings', function($http){
+
+	var Settings = function(){
+
+	}
+
+	//i need recipe title and id
+
+	return Settings;
 
 })
 

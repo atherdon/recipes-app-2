@@ -61,6 +61,22 @@ angular.module('app.routes', [
           templateUrl: 'views/recipe1.html',
           controller: 'singleRecipeCtrl'
         }
+
+      //if you want to check out other recipe templates, uncomment code below
+        // 'menuContent': {
+        //   templateUrl: 'views/recipe2.html',
+        //   controller: 'styledSingleRecipeCtrl'
+        // }
+
+        // 'menuContent': {
+        //   templateUrl: 'views/recipe3.html',
+        //   controller: 'uXSingleRecipeCtrl'
+        // }
+
+        // 'menuContent': {
+        //   templateUrl: 'views/recipe4.html',
+        //   controller: 'uXSingleRecipe2Ctrl'
+        // }
       }
     })
 
@@ -94,15 +110,7 @@ angular.module('app.routes', [
       }
     })
 
-.state('app.recipe2', {
-      url: '/recipe2',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/recipe2.html',
-          controller: 'styledSingleRecipeCtrl'
-        }
-      }
-    })
+
 
 .state('app.ingredients', {
       url: '/ingredients',
@@ -114,25 +122,6 @@ angular.module('app.routes', [
       }
     })
 
-.state('app.recipe3', {
-      url: '/recipe3',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/recipe3.html',
-          controller: 'uXSingleRecipeCtrl'
-        }
-      }
-    })
-
-.state('app.recipe4', {
-      url: '/recipe4',
-      views: {
-        'menuContent': {
-          templateUrl: 'views/recipe4.html',
-          controller: 'uXSingleRecipe2Ctrl'
-        }
-      }
-    })
 
 .state('app.directions', {
       url: '/directions',

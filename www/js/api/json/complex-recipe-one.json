@@ -1,12 +1,25 @@
 /*Weeknight Chicken Posole with Warm Corn Tortillas*/
 {
-    "id": "21", 
+   
     /*"name": "Weeknight Chicken Posole with Warm Corn Tortillas",*/
-    "imageURL": "https://www.nomoretogo.com/wp-content/uploads/2015/07/Chicken-Posole-400x266.jpg",
-    "originalURL": "https://www.nomoretogo.com/sample-menu/weeknight-chicken-posole-with-warm-corn-tortillas/",
-    
-    "title"   : "Weeknight Chicken Posole",
-    "ingredients": [
+    // "img": "",
+   
+
+    "meta" : {
+
+        "id"          : "21",         
+        "title"       : "Weeknight Chicken Posole with Warm Corn Tortillas",
+        "url"         : "https://www.nomoretogo.com/sample-menu/weeknight-chicken-posole-with-warm-corn-tortillas/",
+        "img"         : "https://www.nomoretogo.com/wp-content/uploads/2015/07/Chicken-Posole-400x266.jpg",
+        "created_at"  : "09/02/16", 
+        "description" : "Content"
+    },
+
+    "items" : [
+        {
+            "id": "21",
+            "title"   : "Weeknight Chicken Posole",
+                "ingredients": [
         {
 
             "unit_type" : "simple",
@@ -275,17 +288,14 @@
         "totalTime"   : "",
         "recipeYield" : "4",
         "description" : "Posole is a traditional Mexican soup or stew made with either chicken or pork, seasoned with spices, and slow cooked all day. Our version is a quick fix, but you could easily convert it to a slow cooker recipe by simply placing all the ingredients in the slow cooker and cooking on low for about 7-8 hours. Either way, the combination of tender meat, hominy, and spices is delicious garnished with any number of toppings. We chose cilantro, tomatoes, radish, and avocado. Chopped lettuce or cabbage is also common as well. Enjoy!",
-        "notes"       : ""
+        "notes"       : "",
+        "nutritional" : "Nutritional Information <br />
+                        Serving Size 815g Calories 461 Fat 24 Sat Fat 5 Sodium 1047 Carbs 25 Sugars 3 Fiber 7 Protein 40."
     }]
-},
-
-{
-    "id": "21", 
-    /*"name": "Weeknight Chicken Posole with Warm Corn Tortillas",*/
-    "imageURL": "https://www.nomoretogo.com/wp-content/uploads/2015/07/Chicken-Posole-400x266.jpg",
-    "originalURL": "https://www.nomoretogo.com/sample-menu/weeknight-chicken-posole-with-warm-corn-tortillas/",
-    
-    "title"   : "Corn Torillas",
+        },
+        {
+            "id": "23", 
+                "title"   : "Corn Torillas",
     "ingredients": [
         {
 
@@ -317,9 +327,10 @@
         VEGETARIAN TIP: Replace the chicken with chopped mushrooms and zucchini. <br />
         GLUTEN MODIFICATIONS: Gluten free as written."
     }]
+        },
+
+    ],
+
+    
+
 }
-
-
-
-/*Nutritional Information*/
-/*Serving Size 815g Calories 461 Fat 24 Sat Fat 5 Sodium 1047 Carbs 25 Sugars 3 Fiber 7 Protein 40.*/

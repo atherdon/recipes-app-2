@@ -1,0 +1,33 @@
+<ion-view view-title="Grocery List" id="page-gl-one" >
+  <ion-content padding="true" class="has-header" ng-repeat = "department in departments">
+
+  	<h3 id="gl-heading2" class="black">      
+      {{department.title}}
+      {{department.department_id}}
+      {{department.id}}
+    </h3>
+
+	<div class="item item-body" id="category-list-item-container35">
+
+      <form id="category-form8" class="list" ng-repeat="ing in department.ingredients">
+                
+            <!--
+                @TODO word-wrap apply to labels. or make it font-size less
+                save method not working right now
+            -->
+            <ion-checkbox>
+                {{ ing.id }} : 
+                {{ ing.units }} - 
+                {{ ing.name }} 
+            </ion-checkbox>
+            
+              
+      </form>
+
+    </div>
+
+
+  </ion-content>
+
+    
+</ion-view>

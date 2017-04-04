@@ -9,7 +9,8 @@ angular.module('app.services', [])
 	};
 
 	FreeRecipes.prototype.getData = function() {
-		this.data = $http.get('/js/api/json/weeklymenu.json');
+		this.data = $http.get('/js/api/json/free-recipes.json');
+		// this.data = $http.get('/js/api/json/weeklymenu.json');
 	};
 
 	FreeRecipes.prototype.fetch = function(){

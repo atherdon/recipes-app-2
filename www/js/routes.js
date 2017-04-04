@@ -16,7 +16,7 @@ angular.module('app.routes', [
   .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
+    templateUrl: 'views/menu.html',
     controller: 'AppCtrl'
   })
 
@@ -35,7 +35,7 @@ angular.module('app.routes', [
       url: '/weeklymenu',
       views: {
         'menuContent': {
-          templateUrl: 'templates/weeklymenu.html',
+          templateUrl: 'views/weeklymenu.html',
           controller: 'weeklyMenuCtrl'
         }
       }
@@ -46,7 +46,7 @@ angular.module('app.routes', [
       url: '/weeklymenu/:id',
       views: {
         'menuContent': {
-          templateUrl: 'templates/weeklymenu.html',
+          templateUrl: 'views/weeklymenu.html',
           controller: 'weeklyMenuPrevCtrl'
         }
       }
@@ -58,7 +58,7 @@ angular.module('app.routes', [
       url: '/recipe1',
       views: {
         'menuContent': {
-          templateUrl: 'templates/recipe1.html',
+          templateUrl: 'views/recipe1.html',
           controller: 'singleRecipeCtrl'
         }
       }
@@ -68,7 +68,7 @@ angular.module('app.routes', [
 //       url: '/login1',
 //       views: {
 //         'menuContent': {
-//           templateUrl: 'templates/login1.html',
+//           templateUrl: 'views/login1.html',
 //           controller: 'loginCtrl'
 //         }
 //       }
@@ -78,7 +78,7 @@ angular.module('app.routes', [
 //       url: '/signup',
 //       views: {
 //         'menuContent': {
-//           templateUrl: 'templates/signup.html',
+//           templateUrl: 'views/signup.html',
 //           controller: 'signupCtrl'
 //         }
 //       }
@@ -88,7 +88,7 @@ angular.module('app.routes', [
       url: '/freerecipes',
       views: {
         'menuContent': {
-          templateUrl: 'templates/freerecipes.html',
+          templateUrl: 'views/freerecipes.html',
           controller: 'freeRecipesCtrl'
         }
       }
@@ -98,7 +98,7 @@ angular.module('app.routes', [
       url: '/recipe2',
       views: {
         'menuContent': {
-          templateUrl: 'templates/recipe2.html',
+          templateUrl: 'views/recipe2.html',
           controller: 'styledSingleRecipeCtrl'
         }
       }
@@ -108,7 +108,7 @@ angular.module('app.routes', [
       url: '/ingredients',
       views: {
         'menuContent': {
-          templateUrl: 'templates/ingredients.html',
+          templateUrl: 'views/ingredients.html',
           controller: 'ingredientsCtrl'
         }
       }
@@ -118,7 +118,7 @@ angular.module('app.routes', [
       url: '/recipe3',
       views: {
         'menuContent': {
-          templateUrl: 'templates/recipe3.html',
+          templateUrl: 'views/recipe3.html',
           controller: 'uXSingleRecipeCtrl'
         }
       }
@@ -128,7 +128,7 @@ angular.module('app.routes', [
       url: '/recipe4',
       views: {
         'menuContent': {
-          templateUrl: 'templates/recipe4.html',
+          templateUrl: 'views/recipe4.html',
           controller: 'uXSingleRecipe2Ctrl'
         }
       }
@@ -138,7 +138,7 @@ angular.module('app.routes', [
       url: '/directions',
       views: {
         'menuContent': {
-          templateUrl: 'templates/directions.html',
+          templateUrl: 'views/directions.html',
           controller: 'directionsCtrl'
         }
       }
@@ -148,7 +148,7 @@ angular.module('app.routes', [
       url: '/glsettings',
       views: {
         'menuContent': {
-          templateUrl: 'templates/glsettings.html',
+          templateUrl: 'views/glsettings.html',
           controller: 'groceryListSettingsCtrl'
         }
       }
@@ -158,7 +158,7 @@ angular.module('app.routes', [
       url: '/gl',
       views: {
         'menuContent': {
-          templateUrl: 'templates/gl.html',
+          templateUrl: 'views/gl.html',
           controller: 'groceryListCtrl'
         }
       }
@@ -168,7 +168,7 @@ angular.module('app.routes', [
       url: '/calendar',
       views: {
         'menuContent': {
-          templateUrl: 'templates/calendar.html',
+          templateUrl: 'views/calendar.html',
           controller: 'recipesCalendarCtrl'
         }
       }
@@ -179,7 +179,7 @@ angular.module('app.routes', [
 //       url: '/category/:categoryId',
 //       views: {
 //         'menuContent': {
-//           templateUrl: 'templates/category.html',
+//           templateUrl: 'views/category.html',
 //           controller: 'categoryCtrl'
 //         }
 //       }
@@ -189,7 +189,7 @@ angular.module('app.routes', [
       url: '/department/:departmentId',
       views: {
         'menuContent': {
-          templateUrl: 'templates/department.html',
+          templateUrl: 'views/department.html',
           controller: 'departmentCtrl'
         }
       }
@@ -213,11 +213,11 @@ angular.module('app.routes', [
 //     url: '/page14',
 //     views: {
 //       'tab2': {
-//         templateUrl: 'templates/groceryList.html',
+//         templateUrl: 'views/groceryList.html',
 //         controller: 'groceryListCtrl'
 //       },
 //       'tab3': {
-//         templateUrl: 'templates/groceryList.html',
+//         templateUrl: 'views/groceryList.html',
 //         controller: 'groceryListCtrl'
 //       }
 //     }
@@ -240,11 +240,11 @@ angular.module('app.routes', [
 //     url: '/page15',
 //     views: {
 //       'tab2': {
-//         templateUrl: 'templates/recipesCalendar.html',
+//         templateUrl: 'views/recipesCalendar.html',
 //         controller: 'recipesCalendarCtrl'
 //       },
 //       'tab3': {
-//         templateUrl: 'templates/recipesCalendar.html',
+//         templateUrl: 'views/recipesCalendar.html',
 //         controller: 'recipesCalendarCtrl'
 //       }
 //     }

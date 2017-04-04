@@ -49,9 +49,9 @@ angular.module('app.services', [])
 
 .factory('Grocery', function($http){
 
-	var Grocery = function ( category_id ){
-		this.data        = false;
-		this.category_id = category_id;
+	var Grocery = function ( department_id ){
+		this.data          = false;
+		this.department_id = department_id;
 		// this.category    = false;
 
 		this.getData();
@@ -63,7 +63,7 @@ angular.module('app.services', [])
 	};
 
 
-	Grocery.prototype.getCategory = function(){
+	Grocery.prototype.getDepartment = function(){
 
 		// console.log( this.data );
 		var self = this;
@@ -72,9 +72,23 @@ angular.module('app.services', [])
 
 
 			// console.log( response.data );
-angular.extend(self.data, response.data);
-      return response;
-	       
+      // value.department_id
+	        angular.forEach( response.data, function(value, key){
+
+	            if( value.department_id == self.id ){
+
+
+	            	angular.extend(self, value);	
+	            	// self.category = value;
+	            	// console.log( value );
+
+	            	return response;
+	                // callback(value);
+	                
+	            }
+
+	        });
+
 
     	});
 	};
@@ -252,9 +266,6 @@ angular.extend(self.data, response.data);
 	return Calendar;
 
 })
-
-
-
 
 
 ;

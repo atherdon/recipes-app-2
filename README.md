@@ -1,5 +1,9 @@
 # recipes-app-2
 
+
+
+![Alt text](https://github.com/atherdon/recipes-app-2/blob/master/b944776a01af18191c5324145ec04440-original.png "Optional title")
+
 ![Alt text](https://github.com/atherdon/recipes-app-2/pull/26/files#diff-02822fc031d560839f95fa6eb21f8611 "Optional title")
 
 ![Alt text](https://github.com/atherdon/recipes-app-2/pull/26/files#diff-752b8b915d02f041b22ea31f5903b051 "Optional title")
